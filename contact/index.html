@@ -625,20 +625,40 @@
 
 <script src="/libs/valine/av-min.js"></script>
 <script src="/libs/valine/Valine.min.js"></script>
-<script>
-    new Valine({
-        el: '#vcomments',
-        appId: 'CuNPDxHzI8uE5SluP8bGs75j-9Nh9j0Va',
-        appKey: 'aRBq337zxXsIcgBvbo1LHB0z',
-        notify: 'false' === 'true',
-        verify: 'false' === 'true',
-        visitor: 'true' === 'true',
-        avatar: 'mm',
-        pageSize: '10',
-        lang: 'zh-cn',
-        placeholder: 'just go go'
-    });
+
+<script> 
+	new Valine({ 
+		el: '#vcomments', 
+		admin_email: '514564149@qq.com', 
+		appId: 'CuNPDxHzI8uE5SluP8bGs75j-9Nh9j0Va', 
+		appKey: 'aRBq337zxXsIcgBvbo1LHB0z', 
+		path: window.location.pathname, 
+		comment_count: true, 
+		notify: 'false' === 'true', 
+		verify: 'false' === 'true', 
+		visitor: 'true' === 'true', 
+		avatar: 'mm', pageSize: '10', 
+		lang: 'zh-CN', 
+		placeholder: 'just go go', 
+		
+	}); 
+	$(document).ready(function(){ 
+		$("#vcomments").on('click', 'span.vat',function(){
+			$(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
+			$('textarea#veditor').focus(); 
+		}) 
+	}) 
+</script> 
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script> 
+<script type="text/javascript"> 
+	jinrishici.load(function(result) {
+		var jrsc_plac = result.data.content + "\n「" + result.data.origin.title + "」" +
+						result.data.origin.dynasty + " · " + result.data.origin.author;
+		document.getElementById("veditor").setAttribute("placeholder",jrsc_plac); 
+	}); 
 </script>
+
+
 
 <!--酷Q推送-->
 
