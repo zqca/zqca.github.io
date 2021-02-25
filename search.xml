@@ -15,6 +15,31 @@
     </entry>
     
     
+    
+    <entry>
+      <title>Latex常用命令</title>
+      <link href="2021/02/25/latex-chang-yong-ming-ling/"/>
+      <url>2021/02/25/latex-chang-yong-ming-ling/</url>
+      
+        <content type="html"><![CDATA[<h4 id="常用Latex命令，使用CTR-F查找，不断更新中…"><a href="#常用Latex命令，使用CTR-F查找，不断更新中…" class="headerlink" title="常用Latex命令，使用CTR+F查找，不断更新中…"></a>常用Latex命令，使用CTR+F查找，不断更新中…</h4><blockquote><p>附几个有用的链接：<br>1.<a href="https://liam.page/2014/09/08/latex-introduction/">入门介绍</a><br>2.<a href="http://www.wiris.com/editor/demo/en/developers#mathml-latex">公式转Latex</a><br>3.<a href="https://www.tablesgenerator.com/#">在线生成表格</a></p></blockquote><hr><h5 id="文字处理"><a href="#文字处理" class="headerlink" title="文字处理"></a>文字处理</h5><table><thead><tr><th align="center">命令</th><th align="center">功能</th></tr></thead><tbody><tr><td align="center">%</td><td align="center">注释</td></tr><tr><td align="center">\begin{center}…\end{center}</td><td align="center">居中</td></tr><tr><td align="center">\textit{text}</td><td align="center">斜体</td></tr><tr><td align="center">\textbf{文字}</td><td align="center">加粗</td></tr><tr><td align="center">\noindent</td><td align="center">换行后文字顶格</td></tr><tr><td align="center">\underline{文字}</td><td align="center">下划线</td></tr><tr><td align="center">\overline{text}</td><td align="center">上划线</td></tr></tbody></table><!-- 注释 | 命令 | $$ || 命令 | $$ |--><h5 id="符号"><a href="#符号" class="headerlink" title="符号"></a>符号</h5><table><thead><tr><th align="center">命令</th><th align="center">功能</th></tr></thead><tbody><tr><td align="center">\blacksquare (package:amssymb)</td><td align="center">$\blacksquare$</td></tr><tr><td align="center">\cdot</td><td align="center">$\cdot$</td></tr><tr><td align="center">\cdots</td><td align="center">$\cdots$</td></tr><tr><td align="center">\ell</td><td align="center">$\ell$</td></tr><tr><td align="center">\epsilon</td><td align="center">$\epsilon$</td></tr><tr><td align="center">\equiv</td><td align="center">$\equiv$</td></tr><tr><td align="center">\leq</td><td align="center">$\leq$</td></tr><tr><td align="center">\meq</td><td align="center">$\geq$</td></tr><tr><td align="center">\neq</td><td align="center">$\neq$</td></tr><tr><td align="center">\eta</td><td align="center">$\eta$</td></tr><tr><td align="center">\frac{numerator}{denominator}</td><td align="center">$\frac{1}{2}$</td></tr><tr><td align="center">\gamma</td><td align="center">$\gamma$</td></tr><tr><td align="center">\hat</td><td align="center">$\hat a$</td></tr><tr><td align="center">\hbar</td><td align="center">$\hbar$</td></tr><tr><td align="center">\in</td><td align="center">$\in$</td></tr><tr><td align="center">\lambda</td><td align="center">$\lambda$</td></tr><tr><td align="center">\langle+\rangle</td><td align="center">$\langle+\rangle$</td></tr><tr><td align="center">\notin</td><td align="center">$\notin$</td></tr><tr><td align="center">\parallel</td><td align="center">$\parallel$</td></tr><tr><td align="center">\perp</td><td align="center">$\perp$</td></tr><tr><td align="center">\Pr</td><td align="center">$\Pr$</td></tr><tr><td align="center">\prod</td><td align="center">$\prod$</td></tr><tr><td align="center">\rho</td><td align="center">$\rho$</td></tr><tr><td align="center">\subset</td><td align="center">$\subset$</td></tr><tr><td align="center">\subseteq</td><td align="center">$\subseteq$</td></tr><tr><td align="center">\to</td><td align="center">$\to$</td></tr><tr><td align="center">\times</td><td align="center">$\times$</td></tr><tr><td align="center">\ast</td><td align="center">$\ast$</td></tr></tbody></table><!-- 注释 | 命令 | $$ || 命令 | $$ || 命令 | $$ || 命令 | $$ || 命令 | $$ || 命令 | $$ || 命令 | $$ || 命令 | $$ || 命令 | $$ || 命令 | $$ |-->]]></content>
+      
+      
+      <categories>
+          
+          <category> Latex </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Latex </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
   
   
 </search>
