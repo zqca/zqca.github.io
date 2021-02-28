@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="markdown不完全语法记录, Zqc&#39;s Blog">
+    <meta name="keywords" content="背包问题小结, Zqc&#39;s Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>markdown不完全语法记录 | Zqc&#39;s Blog</title>
+    <title>背包问题小结 | Zqc&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/coverImgs/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98%E5%B0%8F%E7%BB%93.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">markdown不完全语法记录</h1>
+                    <h1 class="description center-align post-title">背包问题小结</h1>
                 </div>
             </div>
         </div>
@@ -431,12 +431,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Typora/">
-                                <span class="chip bg-color">Typora</span>
+                            <a href="/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">
+                                <span class="chip bg-color">背包问题</span>
                             </a>
                         
-                            <a href="/tags/Markdown/">
-                                <span class="chip bg-color">Markdown</span>
+                            <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92dp/">
+                                <span class="chip bg-color">动态规划dp</span>
+                            </a>
+                        
+                            <a href="/tags/Leetcode/">
+                                <span class="chip bg-color">Leetcode</span>
                             </a>
                         
                     </div>
@@ -447,8 +451,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Markdown/" class="post-category">
-                                Markdown
+                            <a href="/categories/Algorithm/" class="post-category">
+                                Algorithm
                             </a>
                         
                     </div>
@@ -460,28 +464,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-02-25
+                    2021-02-28
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-02-27
+                    2021-02-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    569
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    2 分
                 </div>
                 
 
@@ -504,181 +508,132 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="摘要："><a href="#摘要：" class="headerlink" title="摘要："></a>摘要：</h3><p><strong>本文参考了</strong></p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/younghz/Markdown">GitHub</a><br><a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-tutorial.html">菜鸟教程</a></p>
-</blockquote>
-<p><strong>Markdown语法主要分为如下几大部分</strong><br><strong>标题</strong>，<strong>段落</strong>，<strong>区块引用</strong>，<strong>代码区块</strong>，<strong>强调</strong>，<strong>列表</strong>，<strong>分割线</strong>，<strong>链接</strong>，<strong>图片</strong>，<strong>反斜杠</strong>，<strong>标记符号</strong>。</p>
-<p><strong>进阶</strong><br><strong>注释</strong>，<strong>表格</strong>，<strong>公式</strong></p>
-<hr>
-<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="1-标题"><a href="#1-标题" class="headerlink" title="1. 标题"></a>1. 标题</h3><p>使用可以<code>#</code>来表示1-6级标题。</p>
-<blockquote>
-<p># 一级标题<br>## 二级标题<br>###### 六级标题</p>
-</blockquote>
-<h3 id="2-段落"><a href="#2-段落" class="headerlink" title="2. 段落"></a>2. 段落</h3><p>段落的前后要有空行，所谓的空行是指没有文字内容。若想在段内强制换行的方式是使用<strong>两个以上</strong>空格加上回车。</p>
-<p>效果：</p>
-<blockquote>
-<p>这是一个段落<br>这是段落内强制换行</p>
-</blockquote>
-<h3 id="3-区块引用"><a href="#3-区块引用" class="headerlink" title="3. 区块引用"></a>3. 区块引用</h3><p>在段落的每行或者只在第一行使用符号<code>&gt;</code>,还可使用多个嵌套引用，如：</p>
-<blockquote>
-<p>&gt; 区块引用<br>&gt;&gt; 嵌套引用  </p>
-</blockquote>
-<p>效果：</p>
-<blockquote>
-<blockquote>
-<p>区块引用  </p>
-<blockquote>
-<p>嵌套引用</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h3 id="4-代码区块"><a href="#4-代码区块" class="headerlink" title="4. 代码区块"></a>4. 代码区块</h3><p>代码区块的建立是在每行加上4个空格或者一个制表符（如同写代码一样）。如 ：<br>普通段落：</p>
-<blockquote>
-<p>void main()<br>{<br>   printf(“Hello, Markdown.”);<br>}   </p>
-</blockquote>
-<p>代码区块：</p>
-<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Hello, Markdown."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>注意</strong>:代码区块需要和普通段落之间存在空行。</p>
-<h3 id="5-强调"><a href="#5-强调" class="headerlink" title="5. 强调"></a>5. 强调</h3><blockquote>
-<p>*斜体*，_斜体_<br>**粗体**，__粗体__<br>~~删除线~~<br>&lt;u&gt;带下划线文本&lt;/u&gt;</p>
-</blockquote>
-<p>效果：</p>
-<blockquote>
-<p><em>斜体</em>，<em>斜体</em><br><strong>粗体</strong>，<strong>粗体</strong><br><del>删除线</del><br><u>带下划线文本</u></p>
-</blockquote>
-<h3 id="6-列表"><a href="#6-列表" class="headerlink" title="6. 列表"></a>6. 列表</h3><p>使用<code>·</code>、<code>+</code>、或<code>-</code>标记无序列表，如：</p>
-<blockquote>
-<p>-（+*） 第一项<br>-（+*） 第二项</p>
-</blockquote>
-<p><strong>注意</strong>：标记后面最少有一个<code>空格</code>或<code>制表符</code>。若不在引用区块中，<code>必须</code>与前方段落之间存在空行。</p>
-<p>效果：</p>
-<blockquote>
-<ul>
-<li>第一项</li>
-<li>第二项</li>
-</ul>
-</blockquote>
-<p>有序列表的标记方式是将上述的符号换成数字,并辅以<code>.</code>，如：</p>
-<blockquote>
-<p>1 . 第一项<br>2 . 第二项</p>
-</blockquote>
-<p>效果：</p>
-<blockquote>
-<ol>
-<li>第一项</li>
-<li>第二项</li>
-</ol>
-</blockquote>
-<h3 id="7-分割线"><a href="#7-分割线" class="headerlink" title="7. 分割线"></a>7. 分割线</h3><p>分割线最常使用就是三个或以上<code>*</code>，还可以使用<code>-</code>和<code>_</code>。</p>
-<blockquote>
-<p>我是一条分割线：</p>
-<hr>
-<p>上面是一条分割线，使用了4个<code>*</code>。</p>
-</blockquote>
-<h3 id="8-链接"><a href="#8-链接" class="headerlink" title="8. 链接"></a>8. 链接</h3><p>链接可以由两种形式生成：<strong>行内式</strong>和<strong>参考式</strong>。<br><strong>行内式</strong>：</p>
-<blockquote>
-<p>[younghz的Markdown库](<a target="_blank" rel="noopener" href="https://github.com/younghz/Markdown">https://github.com/younghz/Markdown</a> “Markdown”)。</p>
-</blockquote>
-<p>效果：</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/younghz/Markdown" title="Markdown">younghz的Markdown库</a>。</p>
-</blockquote>
-<p><strong>参考式</strong>：</p>
-<blockquote>
-<p>[younghz的Markdown库1][1]<br>[younghz的Markdown库2][2]<br>[1]:<a target="_blank" rel="noopener" href="https://github.com/younghz/Markdown">https://github.com/younghz/Markdown</a> “Markdown”<br>[2]:<a target="_blank" rel="noopener" href="https://github.com/younghz/Markdown">https://github.com/younghz/Markdown</a> “Markdown”    </p>
-</blockquote>
-<p>效果：</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/younghz/Markdown" title="Markdown">younghz的Markdown库1</a><br><a target="_blank" rel="noopener" href="https://github.com/younghz/Markdown" title="Markdown">younghz的Markdown库2</a></p>
-</blockquote>
-<p><strong>注意</strong>：上述的<code>[1]:https://github.com/younghz/Markdown &quot;Markdown&quot;</code>不出现在区块中。</p>
-<h3 id="9-图片"><a href="#9-图片" class="headerlink" title="9. 图片"></a>9. 图片</h3><p>添加图片的形式和链接相似，只需在链接的基础上前方加一个<code>！</code>。<br>语法：</p>
-<blockquote>
-<p>![<code>alt 属性文本</code>](<code>图片地址</code> <code>可选标题</code>)<br>![RUNOOB 图标](<a target="_blank" rel="noopener" href="http://static.runoob.com/images/runoob-logo.png">http://static.runoob.com/images/runoob-logo.png</a> “RUNOOB”)</p>
-</blockquote>
-<p>效果：<br><img src="http://static.runoob.com/images/runoob-logo.png" alt="RUNOOB 图标" title="RUNOOB"></p>
-<h3 id="10-反斜杠"><a href="#10-反斜杠" class="headerlink" title="10. 反斜杠"></a>10. 反斜杠</h3><p>相当于<strong>反转义</strong>作用。使符号成为普通符号，似乎不能成功作用于下面那个符号。</p>
-<h3 id="11-标记符号"><a href="#11-标记符号" class="headerlink" title="11. 标记符号"></a>11. 标记符号</h3><p><code>Tab键</code>上面那个符号起到标记作用。如：</p>
-<blockquote>
-<p>`ctrl+a`<br>效果：<br><code>ctrl+a</code>    </p>
+                <h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a><center>解题思路</center></h1><p>安利公众号 <code>代码随想录</code>的这篇<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/znj-9j8mWymRFaPjJN2Qnw">文章</a> ，参考了<code>Jackie1995</code>的<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/combination-sum-iv/solution/xi-wang-yong-yi-chong-gui-lu-gao-ding-bei-bao-wen-/">题解</a></p>
+<h3 id="常见的背包问题有"><a href="#常见的背包问题有" class="headerlink" title="常见的背包问题有"></a>常见的背包问题有</h3><blockquote>
+<p>1、组合问题<br>2、True、False问题<br>3、最大最小问题</p>
 </blockquote>
 <hr>
-<h2 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h2><h3 id="1-使用公式"><a href="#1-使用公式" class="headerlink" title="1. 使用公式"></a>1. 使用公式</h3><p>当你需要在编辑器中插入数学公式时，可以使用两个美元符 <code>$$</code> 包裹 TeX 或 LaTeX 格式的数学公式来实现。提交后，问答和文章页会根据需要加载 <code>Mathjax</code> 对数学公式进行渲染。如：</p>
-<blockquote>
-<p><code>$$</code><br>E = mc^2<br><code>$$</code></p>
-</blockquote>
-<p>效果：</p>
-<blockquote>
-<p>$$<br>E = mc^2<br>$$</p>
-</blockquote>
-<h3 id="2-注释"><a href="#2-注释" class="headerlink" title="2. 注释"></a>2. 注释</h3><h4 id="2-1-使用html标签"><a href="#2-1-使用html标签" class="headerlink" title="2.1 使用html标签"></a>2.1 使用html标签</h4><p>由于markdown内嵌html语法，因此可以用特殊的html标签以及html注释进行注释。<strong>注意</strong>，使用HTML标签需要在前面空一行。</p>
-<p>示例1：    </p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token style-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span><span class="token style language-css"><span class="token property">display</span><span class="token punctuation">:</span> none</span><span class="token punctuation">'</span></span></span><span class="token punctuation">></span></span>
-我是注释，不会在浏览器中显示。
-我也是注释。
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>示例2：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!--哈哈我是注释，不会在浏览器中显示。--></span>
-<span class="token comment">&lt;!--
-哈哈我是多段
-注释，
-不会在浏览器中显示。
---></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-<p>效果：没有效果（滑稽）</p>
-<div style='display: none'>
-    我是注释，不会在浏览器中显示。
-    我也是注释。
-</div>
-<!--哈哈我是注释，不会在浏览器中显示。-->
-
-<!--
-    哈哈我是多段
-    注释，
-    不会在浏览器中显示。
--->
-
-<h4 id="2-2-使用hack方法（稳定）"><a href="#2-2-使用hack方法（稳定）" class="headerlink" title="2.2 使用hack方法（稳定）"></a>2.2 使用hack方法（稳定）</h4><p>hack方法就是利用markdown的解析原理来实现注释的。hack方法比上面2种方法稳定得多，但是<strong>语义化太差</strong>。**<em>注释前后需要空行**</em></p>
-<p>示例：</p>
-<blockquote>
-<p>[comment]: &lt;&gt; (哈哈我是注释，不会在浏览器中显示。)<br>[comment]: &lt;&gt; (哈哈我是注释，不会在浏览器中显示。)<br>[comment]: &lt;&gt; (哈哈我是注释，不会在浏览器中显示。)<br>[//]: &lt;&gt; (哈哈我是注释，不会在浏览器中显示。)<br>[//]: # (哈哈我是注释，不会在浏览器中显示。)</p>
-</blockquote>
-<p>效果：还是没有效果（滑稽）</p>
-<h3 id="3-表格"><a href="#3-表格" class="headerlink" title="3. 表格"></a>3. 表格</h3><p>Markdown 制作表格使用<code> |</code> 来分隔不同的单元格，使用 <code>- </code>来分隔表头和其他行。<br>我们可以设置表格的对齐方式：</p>
-<blockquote>
-<p><code>-:</code> 设置内容和标题栏居右对齐。<br><code>:-</code> 设置内容和标题栏居左对齐。<br><code>:-:</code> 设置内容和标题栏居中对齐。</p>
-</blockquote>
-<p>示例：</p>
-<blockquote>
-<p>| 左对齐 | 右对齐 | 居中对齐 |<br>| :----- | ----: | :----: |<br>| 单元格 | 单元格 | 单元格 |<br>| 单元格 | 单元格 | 单元格 |</p>
-</blockquote>
-<p>效果：</p>
+<h4 id="1-组合问题"><a href="#1-组合问题" class="headerlink" title="1. 组合问题:"></a>1. 组合问题:</h4><p>典型题目有：</p>
 <table>
 <thead>
 <tr>
-<th align="left">左对齐</th>
-<th align="center">右对齐</th>
-<th align="center">居中对齐</th>
+<th align="center">题目</th>
+<th align="center">我的解答</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left">单元格</td>
-<td align="center">单元格</td>
-<td align="center">单元格</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/combination-sum-iv/description/">377.组合总和 Ⅳ</a></td>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/zqca/LeetCode-Train/blob/main/377.combinationSum4.cpp">已完成</a></td>
 </tr>
 <tr>
-<td align="left">单元格</td>
-<td align="center">单元格</td>
-<td align="center">单元格</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/target-sum/description/">494.目标和</a></td>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/zqca/LeetCode-Train/blob/main/494.findTargetSumWays.cpp">已完成</a></td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/coin-change-2/description/">518.零钱兑换 II</a></td>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/zqca/LeetCode-Train/blob/main/518.change.cpp">已完成</a></td>
 </tr>
 </tbody></table>
+<p>递推公式;</p>
+<blockquote>
+<p>dp[i] += dp[i-num]</p>
+</blockquote>
+<h4 id="2-True、False问题："><a href="#2-True、False问题：" class="headerlink" title="2. True、False问题："></a>2. True、False问题：</h4><p>典型题目有：</p>
+<table>
+<thead>
+<tr>
+<th align="center">题目</th>
+<th align="center">我的解答</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/word-break/">139.单词拆分</a></td>
+<td align="center">未完成</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/partition-equal-subset-sum/description/">416.分割等和子集</a></td>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/zqca/LeetCode-Train/blob/main/416.canPartition.cpp">已完成</a></td>
+</tr>
+</tbody></table>
+<p>递推公式;</p>
+<blockquote>
+<p>dp[i] = dp[i] or dp[i-num]</p>
+</blockquote>
+<h4 id="3-最大最小问题"><a href="#3-最大最小问题" class="headerlink" title="3. 最大最小问题:"></a>3. 最大最小问题:</h4><p>典型题目有：</p>
+<table>
+<thead>
+<tr>
+<th align="center">题目</th>
+<th align="center">我的解答</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/ones-and-zeroes/description/">474.一和零</a></td>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/zqca/LeetCode-Train/blob/main/474.findMaxForm.cpp">已完成</a></td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/coin-change/description/">322.零钱兑换</a></td>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/zqca/LeetCode-Train/blob/main/322.coinChange.cpp">已完成</a></td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/perfect-squares/">279.零钱兑换</a></td>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/zqca/LeetCode-Train/blob/main/279.numSquares.cpp">已完成</a></td>
+</tr>
+</tbody></table>
+<p>递推公式;</p>
+<blockquote>
+<p>dp[i] = min(dp[i], dp[i-num]+1)或者dp[i] = max(dp[i], dp[i-num]+1)</p>
+</blockquote>
+<h4 id="4-方法论"><a href="#4-方法论" class="headerlink" title="4. 方法论"></a>4. 方法论</h4><p>当然拿到问题后，需要做到以下几个步骤：</p>
+<blockquote>
+<p>1.分析是否为背包问题。<br>2.是以上三种背包问题中的哪一种。<br>3.是0-1背包问题还是完全背包问题。也就是题目给的nums数组中的元素是否可以重复使用。<br>4.如果是组合问题，是否需要考虑元素之间的顺序。需要考虑顺序有顺序的解法，不需要考虑顺序又有对应的解法。</p>
+</blockquote>
+<p>接下来讲一下背包问题的判定</p>
+<blockquote>
+<p>背包问题具备的特征：给定一个target，target可以是数字也可以是字符串，再给定一个数组nums，nums中装的可能是数字，也可能是字符串，问：能否使用nums中的元素做各种排列组合得到target。</p>
+</blockquote>
+<h4 id="5-背包问题技巧："><a href="#5-背包问题技巧：" class="headerlink" title="5. 背包问题技巧："></a>5. 背包问题技巧：</h4><ol>
+<li><p>如果是<strong>0-1背包</strong>，即数组中的元素<strong>不可重复使用</strong>，nums放在<code>外循环</code> ，target在<code>内循环</code>，且内循环<code>倒序</code>；</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">for num in nums:
+	for i in range(target, nums-1, -1):<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li><p>如果是<strong>完全背包</strong>，即数组中的元素<strong>可重复使用</strong>，nums放在<code>外循环</code>，target在<code>内循环</code>。且内循环<code>正序</code>。</p>
+ <pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">for num in nums:
+	for i in range(nums, target+1):<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+</li>
+</ol>
+<ol start="3">
+<li><p>如果<strong>组合问题</strong>需考虑元素之间的顺序，需将target放在<code>外循环</code>，将nums放在<code>内循环</code>。</p>
+ <pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">for i in range(1, target+1):
+	for num in nums:<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</li>
+</ol>
 
                 
             </div>
@@ -705,7 +660,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://hexo.zqca.top/2021/02/25/markdown-bu-wan-quan-yu-fa-ji-lu/">https://hexo.zqca.top/2021/02/25/markdown-bu-wan-quan-yu-fa-ji-lu/</a>
+                    <a href="https://hexo.zqca.top/2021/02/28/bei-bao-wen-ti-xiao-jie/">https://hexo.zqca.top/2021/02/28/bei-bao-wen-ti-xiao-jie/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -743,12 +698,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Typora/">
-                                    <span class="chip bg-color">Typora</span>
+                                <a href="/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">
+                                    <span class="chip bg-color">背包问题</span>
                                 </a>
                             
-                                <a href="/tags/Markdown/">
-                                    <span class="chip bg-color">Markdown</span>
+                                <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92dp/">
+                                    <span class="chip bg-color">动态规划dp</span>
+                                </a>
+                            
+                                <a href="/tags/Leetcode/">
+                                    <span class="chip bg-color">Leetcode</span>
                                 </a>
                             
                         </div>
@@ -1080,46 +1039,55 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/02/25/latex-chang-yong-ming-ling/">
+                <a href="/2021/02/28/bei-bao-wen-ti-xiao-jie/">
                     <div class="card-image">
                         
+                        <img src="/medias/coverImgs/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98%E5%B0%8F%E7%BB%93.jpg" class="responsive-img" alt="背包问题小结">
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Latex常用命令">
-                        
-                        <span class="card-title">Latex常用命令</span>
+                        <span class="card-title">背包问题小结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            记录使用过的命令，方便今后使用
+                            对背包问题进行总结分类
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Latex/" class="post-category">
-                                    Latex
+                            <a href="/categories/Algorithm/" class="post-category">
+                                    Algorithm
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Latex/">
-                        <span class="chip bg-color">Latex</span>
+                    <a href="/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">
+                        <span class="chip bg-color">背包问题</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92dp/">
+                        <span class="chip bg-color">动态规划dp</span>
+                    </a>
+                    
+                    <a href="/tags/Leetcode/">
+                        <span class="chip bg-color">Leetcode</span>
                     </a>
                     
                 </div>
@@ -1130,14 +1098,13 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/02/25/markdown-bu-wan-quan-yu-fa-ji-lu/">
+                <a href="/2021/02/27/markdown-bu-wan-quan-yu-fa-ji-lu/">
                     <div class="card-image">
                         
-                        
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="markdown不完全语法记录">
+                        <img src="/medias/coverImgs/markdown%E4%B8%8D%E5%AE%8C%E5%85%A8%E8%AF%AD%E6%B3%95%E8%AE%B0%E5%BD%95.jpg" class="responsive-img" alt="markdown不完全语法记录">
                         
                         <span class="card-title">markdown不完全语法记录</span>
                     </div>
@@ -1150,7 +1117,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-27
                             </span>
                         <span class="publish-author">
                             
@@ -1164,7 +1131,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1342,13 +1308,6 @@
 </main>
 
 
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
-
 
 
     <footer class="page-footer bg-color">
@@ -1366,7 +1325,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">1.4k</span>&nbsp;字
+                class="white-color">2k</span>&nbsp;字
             
             
             
