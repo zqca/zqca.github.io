@@ -310,7 +310,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/coverImgs/%E9%9B%B6%E6%95%A3%E7%9F%A5%E8%AF%86%E7%82%B9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -478,14 +478,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    6 分
                 </div>
                 
 
@@ -567,166 +567,166 @@
 <li>React.createRef (从React 16.3开始)</li>
 </ul>
 </blockquote>
-<h4 id="方式1：字符串-Refs（将被废弃）"><a href="#方式1：字符串-Refs（将被废弃）" class="headerlink" title="方式1：字符串 Refs（将被废弃）"></a>方式1：字符串 Refs（将被废弃）</h4><pre class="line-numbers language-react" data-language="react"><code class="language-react">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;meta charset&#x3D;&quot;UTF-8&quot; &#x2F;&gt;
-&lt;title&gt;React 实例&lt;&#x2F;title&gt;
-&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;react&#x2F;16.4.0&#x2F;umd&#x2F;react.development.js&quot;&gt;&lt;&#x2F;script&gt;
-&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;react-dom&#x2F;16.4.0&#x2F;umd&#x2F;react-dom.development.js&quot;&gt;&lt;&#x2F;script&gt;
-&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;babel-standalone&#x2F;6.26.0&#x2F;babel.min.js&quot;&gt;&lt;&#x2F;script&gt;
-&lt;&#x2F;head&gt;
-&lt;body&gt;
-&lt;div id&#x3D;&quot;example&quot;&gt;&lt;&#x2F;div&gt;
+<h4 id="方式1：字符串-Refs（将被废弃）"><a href="#方式1：字符串-Refs（将被废弃）" class="headerlink" title="方式1：字符串 Refs（将被废弃）"></a>方式1：字符串 Refs（将被废弃）</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>React 实例<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.staticfile.org/react/16.4.0/umd/react.development.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 
-&lt;script type&#x3D;&quot;text&#x2F;babel&quot;&gt;
-class MyComponent extends React.Component &#123;
-	constructor(props) &#123;
-    	super(props);
-    	this.state &#x3D; &#123; uppercase: false &#125;;
-		this.toggleInputCase &#x3D; this.toggleInputCase.bind(this);
-  	&#125;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/babel<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">class</span> <span class="token class-name">MyComponent</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">&#123;</span>
+	<span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    	<span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    	<span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">&#123;</span> uppercase<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>toggleInputCase <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">toggleInputCase</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  	<span class="token punctuation">&#125;</span>
 	
-	toggleInputCase() &#123;
-		const isUpper &#x3D; this.state.uppercase;
-        &#x2F;* 注意这里 *&#x2F;
-		const value &#x3D; this.refs.inputField.value;
-		this.refs.inputField.value &#x3D; isUpper
-    		? value.toLowerCase()
-    		: value.toUpperCase();
-		this.setState(&#123; uppercase: !isUpper &#125;);
-	&#125;
+	<span class="token function">toggleInputCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">const</span> isUpper <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>uppercase<span class="token punctuation">;</span>
+        <span class="token comment">/* 注意这里 */</span>
+		<span class="token keyword">const</span> value <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>refs<span class="token punctuation">.</span>inputField<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>refs<span class="token punctuation">.</span>inputField<span class="token punctuation">.</span>value <span class="token operator">=</span> isUpper
+    		<span class="token operator">?</span> value<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    		<span class="token operator">:</span> value<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> uppercase<span class="token operator">:</span> <span class="token operator">!</span>isUpper <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
 
-	render() &#123;
-		return (
-  			&lt;div&gt;
-                &#123;&#x2F;* 创建一个字符串 ref: inputField *&#x2F;&#125;
-    			&lt;input type&#x3D;&quot;text&quot; ref&#x3D;&quot;inputField&quot; &#x2F;&gt;
-    			&lt;button type&#x3D;&quot;button&quot; onClick&#x3D;&#123;this.toggleInputCase&#125;&gt;
+	<span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">return</span> <span class="token punctuation">(</span>
+  			<span class="token operator">&lt;</span>div<span class="token operator">></span>
+                <span class="token punctuation">&#123;</span><span class="token comment">/* 创建一个字符串 ref: inputField */</span><span class="token punctuation">&#125;</span>
+    			<span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"text"</span> ref<span class="token operator">=</span><span class="token string">"inputField"</span> <span class="token operator">/</span><span class="token operator">></span>
+    			<span class="token operator">&lt;</span>button type<span class="token operator">=</span><span class="token string">"button"</span> onClick<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>toggleInputCase<span class="token punctuation">&#125;</span><span class="token operator">></span>
       				Toggle Case
-    			&lt;&#x2F;button&gt;
-  			&lt;&#x2F;div&gt;
-		);
-	&#125;
-&#125;
+    			<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
+  			<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+		<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
  
-ReactDOM.render(
-  &lt;MyComponent &#x2F;&gt;,
-  document.getElementById(&#39;example&#39;)
-);
-&lt;&#x2F;script&gt;
+ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span>MyComponent <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span>
+  document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'example'</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 
-&lt;&#x2F;body&gt;
-&lt;&#x2F;html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="方式2：回调函数-Refs"><a href="#方式2：回调函数-Refs" class="headerlink" title="方式2：回调函数 Refs"></a>方式2：回调函数 Refs</h4><pre class="line-numbers language-react" data-language="react"><code class="language-react">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;meta charset&#x3D;&quot;UTF-8&quot; &#x2F;&gt;
-&lt;title&gt;React 实例&lt;&#x2F;title&gt;
-&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;react&#x2F;16.4.0&#x2F;umd&#x2F;react.development.js&quot;&gt;&lt;&#x2F;script&gt;
-&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;react-dom&#x2F;16.4.0&#x2F;umd&#x2F;react-dom.development.js&quot;&gt;&lt;&#x2F;script&gt;
-&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;babel-standalone&#x2F;6.26.0&#x2F;babel.min.js&quot;&gt;&lt;&#x2F;script&gt;
-&lt;&#x2F;head&gt;
-&lt;body&gt;
-&lt;div id&#x3D;&quot;example&quot;&gt;&lt;&#x2F;div&gt;
+<h4 id="方式2：回调函数-Refs"><a href="#方式2：回调函数-Refs" class="headerlink" title="方式2：回调函数 Refs"></a>方式2：回调函数 Refs</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>React 实例<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.staticfile.org/react/16.4.0/umd/react.development.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 
-&lt;script type&#x3D;&quot;text&#x2F;babel&quot;&gt;
-class MyComponent extends React.Component &#123;
-	constructor(props) &#123;
-    	super(props);
-    	this.state &#x3D; &#123; uppercase: false &#125;;
-		this.toggleInputCase &#x3D; this.toggleInputCase.bind(this);
-  	&#125;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/babel<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">class</span> <span class="token class-name">MyComponent</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">&#123;</span>
+	<span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    	<span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    	<span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">&#123;</span> uppercase<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>toggleInputCase <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">toggleInputCase</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  	<span class="token punctuation">&#125;</span>
 	
-	toggleInputCase() &#123;
-		const isUpper &#x3D; this.state.uppercase;
-		const value &#x3D; this.inputField.value;
-        &#x2F;* 注意这里 *&#x2F;
-		this.inputField.value &#x3D; isUpper
-    		? value.toLowerCase()
-    		: value.toUpperCase();
-		this.setState(&#123; uppercase: !isUpper &#125;);
-	&#125;
+	<span class="token function">toggleInputCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">const</span> isUpper <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>uppercase<span class="token punctuation">;</span>
+		<span class="token keyword">const</span> value <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>inputField<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+        <span class="token comment">/* 注意这里 */</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>inputField<span class="token punctuation">.</span>value <span class="token operator">=</span> isUpper
+    		<span class="token operator">?</span> value<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    		<span class="token operator">:</span> value<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> uppercase<span class="token operator">:</span> <span class="token operator">!</span>isUpper <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
 	
-  	render() &#123;
-		return (
-      		&lt;div&gt;
-				&#123;&#x2F;* Creating a callback ref and storing it in this.inputField ，注意这里*&#x2F;&#125;
-        		&lt;input type&#x3D;&quot;text&quot; ref&#x3D;&#123;elem &#x3D;&gt; this.inputField &#x3D; elem&#125; &#x2F;&gt;
-        		&lt;button type&#x3D;&quot;button&quot; onClick&#x3D;&#123;this.toggleInputCase&#125;&gt;
+  	<span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">return</span> <span class="token punctuation">(</span>
+      		<span class="token operator">&lt;</span>div<span class="token operator">></span>
+				<span class="token punctuation">&#123;</span><span class="token comment">/* Creating a callback ref and storing it in this.inputField ，注意这里*/</span><span class="token punctuation">&#125;</span>
+        		<span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"text"</span> ref<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token parameter">elem</span> <span class="token operator">=></span> <span class="token keyword">this</span><span class="token punctuation">.</span>inputField <span class="token operator">=</span> elem<span class="token punctuation">&#125;</span> <span class="token operator">/</span><span class="token operator">></span>
+        		<span class="token operator">&lt;</span>button type<span class="token operator">=</span><span class="token string">"button"</span> onClick<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>toggleInputCase<span class="token punctuation">&#125;</span><span class="token operator">></span>
           			Toggle Case
-        		&lt;&#x2F;button&gt;
-      		&lt;&#x2F;div&gt;
-    	);
-	&#125;
-&#125;
+        		<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
+      		<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+    	<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
  
-ReactDOM.render(
-  &lt;MyComponent &#x2F;&gt;,
-  document.getElementById(&#39;example&#39;)
-);
-&lt;&#x2F;script&gt;
+ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span>MyComponent <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span>
+  document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'example'</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 
-&lt;&#x2F;body&gt;
-&lt;&#x2F;html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="方式3：React-createRef-从React-16-3开始"><a href="#方式3：React-createRef-从React-16-3开始" class="headerlink" title="方式3：React.createRef (从React 16.3开始)"></a>方式3：React.createRef (从React 16.3开始)</h4><pre class="line-numbers language-react" data-language="react"><code class="language-react">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;meta charset&#x3D;&quot;UTF-8&quot; &#x2F;&gt;
-&lt;title&gt;React 实例&lt;&#x2F;title&gt;
-&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;react&#x2F;16.4.0&#x2F;umd&#x2F;react.development.js&quot;&gt;&lt;&#x2F;script&gt;
-&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;react-dom&#x2F;16.4.0&#x2F;umd&#x2F;react-dom.development.js&quot;&gt;&lt;&#x2F;script&gt;
-&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;babel-standalone&#x2F;6.26.0&#x2F;babel.min.js&quot;&gt;&lt;&#x2F;script&gt;
-&lt;&#x2F;head&gt;
-&lt;body&gt;
-&lt;div id&#x3D;&quot;example&quot;&gt;&lt;&#x2F;div&gt;
+<h4 id="方式3：React-createRef-从React-16-3开始"><a href="#方式3：React-createRef-从React-16-3开始" class="headerlink" title="方式3：React.createRef (从React 16.3开始)"></a>方式3：React.createRef (从React 16.3开始)</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>React 实例<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.staticfile.org/react/16.4.0/umd/react.development.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 
-&lt;script type&#x3D;&quot;text&#x2F;babel&quot;&gt;
-class MyComponent extends React.Component &#123;
-	constructor(props) &#123;
-    	super(props);
-    	this.state &#x3D; &#123; uppercase: false &#125;;
-		this.toggleInputCase &#x3D; this.toggleInputCase.bind(this);
-		&#x2F;* 注意这里声明ref *&#x2F;
-		this.inputField &#x3D; React.createRef();
-  	&#125;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/babel<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">class</span> <span class="token class-name">MyComponent</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">&#123;</span>
+	<span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    	<span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    	<span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">&#123;</span> uppercase<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>toggleInputCase <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">toggleInputCase</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token comment">/* 注意这里声明ref */</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>inputField <span class="token operator">=</span> React<span class="token punctuation">.</span><span class="token function">createRef</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  	<span class="token punctuation">&#125;</span>
 	
-	toggleInputCase() &#123;
-		const isUpper &#x3D; this.state.uppercase;
-		&#x2F;* 注意这里current *&#x2F;
-		const value &#x3D; this.inputField.current.value;
+	<span class="token function">toggleInputCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">const</span> isUpper <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>uppercase<span class="token punctuation">;</span>
+		<span class="token comment">/* 注意这里current */</span>
+		<span class="token keyword">const</span> value <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>inputField<span class="token punctuation">.</span>current<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
 		
-		&#x2F;* 注意这里current *&#x2F;
-		this.inputField.current.value &#x3D; isUpper
-    		? value.toLowerCase()
-    		: value.toUpperCase();
-		this.setState(&#123; uppercase: !isUpper &#125;);
-	&#125;
+		<span class="token comment">/* 注意这里current */</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>inputField<span class="token punctuation">.</span>current<span class="token punctuation">.</span>value <span class="token operator">=</span> isUpper
+    		<span class="token operator">?</span> value<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    		<span class="token operator">:</span> value<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> uppercase<span class="token operator">:</span> <span class="token operator">!</span>isUpper <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
 	
-  	render() &#123;
-		return (
-      		&lt;div&gt;
-        		&#123;&#x2F;* Referencing the ref from this.inputField *&#x2F;&#125;
-				&#x2F;* 注意这里绑定ref *&#x2F;
-        		&lt;input type&#x3D;&quot;text&quot; ref&#x3D;&#123;this.inputField&#125; &#x2F;&gt;
-        		&lt;button type&#x3D;&quot;button&quot; onClick&#x3D;&#123;this.toggleInputCase&#125;&gt;
+  	<span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">return</span> <span class="token punctuation">(</span>
+      		<span class="token operator">&lt;</span>div<span class="token operator">></span>
+        		<span class="token punctuation">&#123;</span><span class="token comment">/* Referencing the ref from this.inputField */</span><span class="token punctuation">&#125;</span>
+				<span class="token comment">/* 注意这里绑定ref */</span>
+        		<span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"text"</span> ref<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>inputField<span class="token punctuation">&#125;</span> <span class="token operator">/</span><span class="token operator">></span>
+        		<span class="token operator">&lt;</span>button type<span class="token operator">=</span><span class="token string">"button"</span> onClick<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>toggleInputCase<span class="token punctuation">&#125;</span><span class="token operator">></span>
           			Toggle Case
-        		&lt;&#x2F;button&gt;
-      		&lt;&#x2F;div&gt;
-    	);
-	&#125;
-&#125;
+        		<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
+      		<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+    	<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
  
-ReactDOM.render(
-  &lt;MyComponent &#x2F;&gt;,
-  document.getElementById(&#39;example&#39;)
-);
-&lt;&#x2F;script&gt;
+ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span>MyComponent <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span>
+  document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'example'</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 
-&lt;&#x2F;body&gt;
-&lt;&#x2F;html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -1145,8 +1145,7 @@ ReactDOM.render(
                 <a href="/2021/03/08/ling-san-zhi-shi-dian/">
                     <div class="card-image">
                         
-                        
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="零散知识点">
+                        <img src="/medias/coverImgs/%E9%9B%B6%E6%95%A3%E7%9F%A5%E8%AF%86%E7%82%B9.jpg" class="responsive-img" alt="零散知识点">
                         
                         <span class="card-title">零散知识点</span>
                     </div>
@@ -1428,7 +1427,7 @@ ReactDOM.render(
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">3.7k</span>&nbsp;字
+                class="white-color">3.4k</span>&nbsp;字
             
             
             
