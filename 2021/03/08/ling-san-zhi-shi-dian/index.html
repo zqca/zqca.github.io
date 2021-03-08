@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="背包问题小结, Zqc&#39;s Blog">
+    <meta name="keywords" content="零散知识点, Zqc&#39;s Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>背包问题小结 | Zqc&#39;s Blog</title>
+    <title>零散知识点 | Zqc&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/coverImgs/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98%E5%B0%8F%E7%BB%93.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">背包问题小结</h1>
+                    <h1 class="description center-align post-title">零散知识点</h1>
                 </div>
             </div>
         </div>
@@ -431,16 +431,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">
-                                <span class="chip bg-color">背包问题</span>
+                            <a href="/tags/JSON/">
+                                <span class="chip bg-color">JSON</span>
                             </a>
                         
-                            <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92dp/">
-                                <span class="chip bg-color">动态规划dp</span>
+                            <a href="/tags/JS/">
+                                <span class="chip bg-color">JS</span>
                             </a>
                         
-                            <a href="/tags/Leetcode/">
-                                <span class="chip bg-color">Leetcode</span>
+                            <a href="/tags/React/">
+                                <span class="chip bg-color">React</span>
                             </a>
                         
                     </div>
@@ -451,8 +451,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Algorithm/" class="post-category">
-                                Algorithm
+                            <a href="/categories/Record/" class="post-category">
+                                Record
                             </a>
                         
                     </div>
@@ -464,28 +464,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-02-28
+                    2021-03-08
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-01
+                    2021-03-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    577
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    8 分
                 </div>
                 
 
@@ -508,125 +508,230 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a><center>解题思路</center></h1><p>安利公众号 <code>代码随想录</code>的<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/znj-9j8mWymRFaPjJN2Qnw">文章1</a> 以及<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/ZOehl3U1mDiyOQjFG1wNJA">文章2</a>。</p>
-<p><img src="/2021/02/28/bei-bao-wen-ti-xiao-jie/640.png" alt="背包问题分类"></p>
-<p>解决思路：</p>
+                <h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><p><a target="_blank" rel="noopener" href="https://www.runoob.com/json/json-tutorial.html">参考</a></p>
+<h3 id="JSON-parse"><a href="#JSON-parse" class="headerlink" title="JSON.parse()"></a>JSON.parse()</h3><blockquote>
+<p>JSON.parse(text[, reviver])</p>
+<p><strong>text</strong>: 必需， 一个有效的 JSON <code>字符串</code>。</p>
+<p><strong>reviver</strong>: 可选，一个转换结果的函数， 将为对象的每个成员调用此函数。</p>
+</blockquote>
+<p>我们可以使用 JSON.parse() 方法将<code>JSON字符串</code>转换为 JavaScript <code>对象</code>。</p>
+<h3 id="JSON-stringify"><a href="#JSON-stringify" class="headerlink" title="JSON.stringify()"></a>JSON.stringify()</h3><blockquote>
+<p>JSON.stringify(value[, replacer[, space]])</p>
+<p>value: 必需， 要转换的 JavaScript 值（通常为对象或数组）。</p>
+<p>replacer: 可选。用于转换结果的函数或数组。<br>如果 replacer 为函数，则 JSON.stringify 将调用该函数，并传入每个成员的键和值。使用返回值而不是原始值。如果此函数返回 undefined，则排除成员。根对象的键是一个空字符串：””。</p>
+<p>space:<br>可选，文本添加缩进、空格和换行符，如果 space 是一个数字，则返回值文本在每个级别缩进指定数目的空格，如果 space 大于 10，则文本缩进 10 个空格。space 也可以使用非数字，如：\t。</p>
+</blockquote>
+<p>我们可以使用 JSON.stringify() 方法将 JavaScript <code>对象</code>转换为<code>JSON字符串</code>。</p>
+<h3 id="delete"><a href="#delete" class="headerlink" title="delete()"></a>delete()</h3><blockquote>
+<p>delete myObj.sites[1];</p>
+<p>delete 运算符并不是彻底删除元素，而是删除它的值，但<code>仍会保留空间</code>。换句话说，<br>运算符 delete 只是将该值置为 <code>undefined</code>，而<code>不会影响数组长度</code>。</p>
+</blockquote>
+<hr>
+<hr>
+<h2 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h2><p><a target="_blank" rel="noopener" href="https://www.runoob.com/json/json-tutorial.html">参考</a></p>
+<h3 id="array-splice"><a href="#array-splice" class="headerlink" title="array.splice()"></a>array.splice()</h3><blockquote>
+<p>用法：array.splice(index,howmany,item1,…..,itemX)</p>
+<p>解释：在index处<code>删除</code>howmany个元素并且<code>插入</code>元素item1,item2…;</p>
+<p>如果只插入不删除，array.splice(index, 0, item1, item2)</p>
+<p>返回的是被删除的元素，使用该方法<code>会对原数组进行修改</code>。</p>
+</blockquote>
+<h3 id="操作符"><a href="#操作符" class="headerlink" title="+操作符"></a><code>+</code>操作符</h3><blockquote>
+<p>可以将某个类型转换为Number类型，如果转换失败，那么将得到 NaN<br>例如<br><code>+new Date()</code>能将当前时间<code>Mon Mar 08 2021 16:26:54 GMT+0800 (中国标准时间)</code>转换为数字<code>1615192014216</code>，时间戳：<code>这个数字/1000</code>。</p>
+</blockquote>
+<hr>
+<hr>
+<h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><h3 id="React书写习惯"><a href="#React书写习惯" class="headerlink" title="React书写习惯"></a>React书写习惯</h3><blockquote>
+<ol>
+<li>所有私有方法都以<code>_</code>开头;</li>
+<li>所有事件监听的方法都用 handle 开头。把事件监听方法传给组件的时候，属性名用 on 开头;</li>
+</ol>
+</blockquote>
+<h3 id="组件的内容编写顺序如下"><a href="#组件的内容编写顺序如下" class="headerlink" title="组件的内容编写顺序如下"></a>组件的内容编写顺序如下</h3><blockquote>
+<ul>
+<li>static 开头的类属性，如 defaultProps、propTypes。</li>
+<li>构造函数，constructor。</li>
+<li>getter/setter（还不了解的同学可以暂时忽略）。</li>
+<li>组件生命周期。</li>
+<li><code>_</code> 开头的私有方法。</li>
+<li>事件监听方法，handle*。</li>
+<li>render<code>开头的</code>方法，有时候 render() 方法里面的内容会分开到不同函数里面进行，这些函数都以 render 开头。</li>
+<li>render() 方法。 如果所有的组件都按这种顺序来编写，那么维护起来就会方便很多，多人协作的时候别人理解代码也会一目了然。</li>
+</ul>
+</blockquote>
+<h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><p><a target="_blank" rel="noopener" href="https://www.runoob.com/react/react-refs.html">参考-菜鸟教程</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/64412949">参考-知乎</a></p>
+<p>React 提供三种方式创建 Refs:</p>
 <blockquote>
-<p>Step1-确定dp数组（dp table）以及下标的含义<br>Step2-确定递推公式<br>Step3-dp数组如何初始化<br>Step4-确定遍历顺序<br>Step5-举例推导dp数组</p>
+<ul>
+<li>字符串 Refs （将被废弃）</li>
+<li>回调函数 Refs</li>
+<li>React.createRef (从React 16.3开始)</li>
+</ul>
 </blockquote>
+<h4 id="方式1：字符串-Refs（将被废弃）"><a href="#方式1：字符串-Refs（将被废弃）" class="headerlink" title="方式1：字符串 Refs（将被废弃）"></a>方式1：字符串 Refs（将被废弃）</h4><pre class="line-numbers language-react" data-language="react"><code class="language-react">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset&#x3D;&quot;UTF-8&quot; &#x2F;&gt;
+&lt;title&gt;React 实例&lt;&#x2F;title&gt;
+&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;react&#x2F;16.4.0&#x2F;umd&#x2F;react.development.js&quot;&gt;&lt;&#x2F;script&gt;
+&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;react-dom&#x2F;16.4.0&#x2F;umd&#x2F;react-dom.development.js&quot;&gt;&lt;&#x2F;script&gt;
+&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;babel-standalone&#x2F;6.26.0&#x2F;babel.min.js&quot;&gt;&lt;&#x2F;script&gt;
+&lt;&#x2F;head&gt;
+&lt;body&gt;
+&lt;div id&#x3D;&quot;example&quot;&gt;&lt;&#x2F;div&gt;
+
+&lt;script type&#x3D;&quot;text&#x2F;babel&quot;&gt;
+class MyComponent extends React.Component &#123;
+	constructor(props) &#123;
+    	super(props);
+    	this.state &#x3D; &#123; uppercase: false &#125;;
+		this.toggleInputCase &#x3D; this.toggleInputCase.bind(this);
+  	&#125;
+	
+	toggleInputCase() &#123;
+		const isUpper &#x3D; this.state.uppercase;
+        &#x2F;* 注意这里 *&#x2F;
+		const value &#x3D; this.refs.inputField.value;
+		this.refs.inputField.value &#x3D; isUpper
+    		? value.toLowerCase()
+    		: value.toUpperCase();
+		this.setState(&#123; uppercase: !isUpper &#125;);
+	&#125;
+
+	render() &#123;
+		return (
+  			&lt;div&gt;
+                &#123;&#x2F;* 创建一个字符串 ref: inputField *&#x2F;&#125;
+    			&lt;input type&#x3D;&quot;text&quot; ref&#x3D;&quot;inputField&quot; &#x2F;&gt;
+    			&lt;button type&#x3D;&quot;button&quot; onClick&#x3D;&#123;this.toggleInputCase&#125;&gt;
+      				Toggle Case
+    			&lt;&#x2F;button&gt;
+  			&lt;&#x2F;div&gt;
+		);
+	&#125;
+&#125;
+ 
+ReactDOM.render(
+  &lt;MyComponent &#x2F;&gt;,
+  document.getElementById(&#39;example&#39;)
+);
+&lt;&#x2F;script&gt;
+
+&lt;&#x2F;body&gt;
+&lt;&#x2F;html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="方式2：回调函数-Refs"><a href="#方式2：回调函数-Refs" class="headerlink" title="方式2：回调函数 Refs"></a>方式2：回调函数 Refs</h4><pre class="line-numbers language-react" data-language="react"><code class="language-react">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset&#x3D;&quot;UTF-8&quot; &#x2F;&gt;
+&lt;title&gt;React 实例&lt;&#x2F;title&gt;
+&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;react&#x2F;16.4.0&#x2F;umd&#x2F;react.development.js&quot;&gt;&lt;&#x2F;script&gt;
+&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;react-dom&#x2F;16.4.0&#x2F;umd&#x2F;react-dom.development.js&quot;&gt;&lt;&#x2F;script&gt;
+&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;babel-standalone&#x2F;6.26.0&#x2F;babel.min.js&quot;&gt;&lt;&#x2F;script&gt;
+&lt;&#x2F;head&gt;
+&lt;body&gt;
+&lt;div id&#x3D;&quot;example&quot;&gt;&lt;&#x2F;div&gt;
+
+&lt;script type&#x3D;&quot;text&#x2F;babel&quot;&gt;
+class MyComponent extends React.Component &#123;
+	constructor(props) &#123;
+    	super(props);
+    	this.state &#x3D; &#123; uppercase: false &#125;;
+		this.toggleInputCase &#x3D; this.toggleInputCase.bind(this);
+  	&#125;
+	
+	toggleInputCase() &#123;
+		const isUpper &#x3D; this.state.uppercase;
+		const value &#x3D; this.inputField.value;
+        &#x2F;* 注意这里 *&#x2F;
+		this.inputField.value &#x3D; isUpper
+    		? value.toLowerCase()
+    		: value.toUpperCase();
+		this.setState(&#123; uppercase: !isUpper &#125;);
+	&#125;
+	
+  	render() &#123;
+		return (
+      		&lt;div&gt;
+				&#123;&#x2F;* Creating a callback ref and storing it in this.inputField ，注意这里*&#x2F;&#125;
+        		&lt;input type&#x3D;&quot;text&quot; ref&#x3D;&#123;elem &#x3D;&gt; this.inputField &#x3D; elem&#125; &#x2F;&gt;
+        		&lt;button type&#x3D;&quot;button&quot; onClick&#x3D;&#123;this.toggleInputCase&#125;&gt;
+          			Toggle Case
+        		&lt;&#x2F;button&gt;
+      		&lt;&#x2F;div&gt;
+    	);
+	&#125;
+&#125;
+ 
+ReactDOM.render(
+  &lt;MyComponent &#x2F;&gt;,
+  document.getElementById(&#39;example&#39;)
+);
+&lt;&#x2F;script&gt;
+
+&lt;&#x2F;body&gt;
+&lt;&#x2F;html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="方式3：React-createRef-从React-16-3开始"><a href="#方式3：React-createRef-从React-16-3开始" class="headerlink" title="方式3：React.createRef (从React 16.3开始)"></a>方式3：React.createRef (从React 16.3开始)</h4><pre class="line-numbers language-react" data-language="react"><code class="language-react">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset&#x3D;&quot;UTF-8&quot; &#x2F;&gt;
+&lt;title&gt;React 实例&lt;&#x2F;title&gt;
+&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;react&#x2F;16.4.0&#x2F;umd&#x2F;react.development.js&quot;&gt;&lt;&#x2F;script&gt;
+&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;react-dom&#x2F;16.4.0&#x2F;umd&#x2F;react-dom.development.js&quot;&gt;&lt;&#x2F;script&gt;
+&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;babel-standalone&#x2F;6.26.0&#x2F;babel.min.js&quot;&gt;&lt;&#x2F;script&gt;
+&lt;&#x2F;head&gt;
+&lt;body&gt;
+&lt;div id&#x3D;&quot;example&quot;&gt;&lt;&#x2F;div&gt;
+
+&lt;script type&#x3D;&quot;text&#x2F;babel&quot;&gt;
+class MyComponent extends React.Component &#123;
+	constructor(props) &#123;
+    	super(props);
+    	this.state &#x3D; &#123; uppercase: false &#125;;
+		this.toggleInputCase &#x3D; this.toggleInputCase.bind(this);
+		&#x2F;* 注意这里声明ref *&#x2F;
+		this.inputField &#x3D; React.createRef();
+  	&#125;
+	
+	toggleInputCase() &#123;
+		const isUpper &#x3D; this.state.uppercase;
+		&#x2F;* 注意这里current *&#x2F;
+		const value &#x3D; this.inputField.current.value;
+		
+		&#x2F;* 注意这里current *&#x2F;
+		this.inputField.current.value &#x3D; isUpper
+    		? value.toLowerCase()
+    		: value.toUpperCase();
+		this.setState(&#123; uppercase: !isUpper &#125;);
+	&#125;
+	
+  	render() &#123;
+		return (
+      		&lt;div&gt;
+        		&#123;&#x2F;* Referencing the ref from this.inputField *&#x2F;&#125;
+				&#x2F;* 注意这里绑定ref *&#x2F;
+        		&lt;input type&#x3D;&quot;text&quot; ref&#x3D;&#123;this.inputField&#125; &#x2F;&gt;
+        		&lt;button type&#x3D;&quot;button&quot; onClick&#x3D;&#123;this.toggleInputCase&#125;&gt;
+          			Toggle Case
+        		&lt;&#x2F;button&gt;
+      		&lt;&#x2F;div&gt;
+    	);
+	&#125;
+&#125;
+ 
+ReactDOM.render(
+  &lt;MyComponent &#x2F;&gt;,
+  document.getElementById(&#39;example&#39;)
+);
+&lt;&#x2F;script&gt;
+
+&lt;&#x2F;body&gt;
+&lt;&#x2F;html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <hr>
-<h3 id="1-背包递推公式"><a href="#1-背包递推公式" class="headerlink" title="1. 背包递推公式"></a>1. 背包递推公式</h3><h4 id="1-1-问能否能装满背包（或者最多装多少）"><a href="#1-1-问能否能装满背包（或者最多装多少）" class="headerlink" title="1.1 问能否能装满背包（或者最多装多少）"></a>1.1 问能否能装满背包（或者最多装多少）</h4><blockquote>
-<p>dp[j] = max(dp[j], dp[j - nums[i]] + nums[i])</p>
-</blockquote>
-<p>对应题目如下：</p>
-<table>
-<thead>
-<tr>
-<th align="center">题目</th>
-<th align="center">题解</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/partition-equal-subset-sum/">416.分割等和子集</a></td>
-<td align="center"><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUxNjY5NTYxNA==&mid=2247486632&idx=1&sn=4bb229e3f3f5774ac684c0127c88c984&scene=21#wechat_redirect">题解</a></td>
-</tr>
-<tr>
-<td align="center"><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/last-stone-weight-ii/">1049.最后一块石头的重量 II</a></td>
-<td align="center"><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUxNjY5NTYxNA==&mid=2247486644&idx=1&sn=548c90df36b47d67290b5667c7cec3d3&scene=21#wechat_redirect">题解</a></td>
-</tr>
-</tbody></table>
-<hr>
-<h4 id="1-2-问装满背包有几种方法"><a href="#1-2-问装满背包有几种方法" class="headerlink" title="1.2 问装满背包有几种方法"></a>1.2 问装满背包有几种方法</h4><blockquote>
-<p>dp[j] += dp[j - nums[i]] </p>
-</blockquote>
-<p>对应题目如下:</p>
-<table>
-<thead>
-<tr>
-<th align="center">题目</th>
-<th align="center">题解</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/target-sum/">494.目标和</a></td>
-<td align="center"><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUxNjY5NTYxNA==&mid=2247486709&idx=1&sn=75f1f43d96dbd1c5c3e281b8963e3c50&scene=21#wechat_redirect">题解</a></td>
-</tr>
-<tr>
-<td align="center"><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/coin-change-2/">518. 零钱兑换 II</a></td>
-<td align="center"><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUxNjY5NTYxNA==&mid=2247486757&idx=1&sn=36f5eb60bfe4d8993cf3b3def5645a34&scene=21#wechat_redirect">题解</a></td>
-</tr>
-<tr>
-<td align="center"><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/combination-sum-iv/">377.组合总和Ⅳ</a></td>
-<td align="center"><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUxNjY5NTYxNA==&mid=2247486826&idx=2&sn=80de2ae278bfd0c906d51fd012d37565&scene=21#wechat_redirect">题解</a></td>
-</tr>
-<tr>
-<td align="center"><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/climbing-stairs/">70. 爬楼梯进阶版（完全背包）</a></td>
-<td align="center"><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUxNjY5NTYxNA==&mid=2247486833&idx=1&sn=beda10fdf8f53e8596dd3ad56ff751d5&scene=21">题解</a></td>
-</tr>
-</tbody></table>
-<hr>
-<h4 id="1-3-问背包装满最大价值"><a href="#1-3-问背包装满最大价值" class="headerlink" title="1.3 问背包装满最大价值"></a>1.3 问背包装满最大价值</h4><blockquote>
-<p>dp[j] = max(dp[j], dp[j - weight[i]] + value[i])</p>
-</blockquote>
-<p>对应题目如下：</p>
-<table>
-<thead>
-<tr>
-<th align="center">题目</th>
-<th align="center">题解</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/ones-and-zeroes/">474.一和零</a></td>
-<td align="center"><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUxNjY5NTYxNA==&mid=2247486739&idx=2&sn=e226eacf67df9b6c784264f954ae42bf&scene=21#wechat_redirect">题解</a></td>
-</tr>
-</tbody></table>
-<hr>
-<h4 id="1-4-问装满背包所有物品的最小个数"><a href="#1-4-问装满背包所有物品的最小个数" class="headerlink" title="1.4 问装满背包所有物品的最小个数"></a>1.4 问装满背包所有物品的最小个数</h4><blockquote>
-<p>dp[j] =  min(dp[j - coins[i]] + 1, dp[j])</p>
-</blockquote>
-<p>对应题目如下：</p>
-<table>
-<thead>
-<tr>
-<th align="center">题目</th>
-<th align="center">题解</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/coin-change/">322.零钱兑换</a></td>
-<td align="center"><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUxNjY5NTYxNA==&mid=2247486848&idx=1&sn=fec1c0c36789f4929a9067910afd600b&scene=21#wechat_redirect">题解</a></td>
-</tr>
-<tr>
-<td align="center"><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/perfect-squares/">279.完全平方数</a></td>
-<td align="center"><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUxNjY5NTYxNA==&mid=2247486872&idx=2&sn=01a3b81edafd125812d8860e89a6407f&scene=21#wechat_redirect">题解</a></td>
-</tr>
-</tbody></table>
-<hr>
-<h3 id="2-一维dp数组遍历顺序："><a href="#2-一维dp数组遍历顺序：" class="headerlink" title="2.  一维dp数组遍历顺序："></a>2.  一维dp数组遍历顺序：</h3><h4 id="2-1-0-1背包，即数组中的元素不可重复使用"><a href="#2-1-0-1背包，即数组中的元素不可重复使用" class="headerlink" title="2.1 0-1背包，即数组中的元素不可重复使用"></a>2.1 <strong>0-1背包</strong>，即数组中的元素<strong>不可重复使用</strong></h4><p>遍历物品放在<code>外循环</code> ，遍历背包容量在<code>内循环</code>，且内循环是<u><code>从大到小遍历</code></u>；</p>
-<hr>
-<h4 id="2-2-完全背包，即数组中的元素可重复使用"><a href="#2-2-完全背包，即数组中的元素可重复使用" class="headerlink" title="2.2 完全背包，即数组中的元素可重复使用"></a>2.2 <strong>完全背包</strong>，即数组中的元素<strong>可重复使用</strong></h4><h5 id="2-2-1-纯完全背包"><a href="#2-2-1-纯完全背包" class="headerlink" title="2.2.1 纯完全背包"></a>2.2.1 纯完全背包</h5><p>纯完全背包的一维dp数组实现，先遍历物品还是先遍历背包都是可以的，且第二层for循环是<code>从小到大遍历</code>。</p>
-<blockquote>
-<p><strong><em>为了方便记忆</em></strong>，我选择：遍历物品放在<code>外循环</code>，遍历背包容量在<code>内循环</code>。且内循环<code>正序</code>。</p>
-</blockquote>
-<hr>
-<h5 id="2-2-2-排列组合问题"><a href="#2-2-2-排列组合问题" class="headerlink" title="2.2.2 排列组合问题"></a>2.2.2 <strong>排列组合问题</strong></h5><blockquote>
-<p><code>求组合数</code>：外层for循环<code>遍历物品</code>，内层for循环<code>遍历背包</code></p>
-<blockquote>
-<p>例题：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/coin-change-2/">518.零钱兑换II</a>|<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUxNjY5NTYxNA==&mid=2247486757&idx=1&sn=36f5eb60bfe4d8993cf3b3def5645a34&scene=21#wechat_redirect">题解</a></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p><code>求排列数</code>:   外层for循环<code>遍历背包</code>，内层for循环<code>遍历物品</code></p>
-<blockquote>
-<p>例题：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/combination-sum-iv/">377.组合总和Ⅳ</a> | <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUxNjY5NTYxNA==&mid=2247486826&idx=2&sn=80de2ae278bfd0c906d51fd012d37565&scene=21#wechat_redirect">题解</a>、<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/climbing-stairs/">70. 爬楼梯进阶版（完全背包）</a> | <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUxNjY5NTYxNA==&mid=2247486833&idx=1&sn=beda10fdf8f53e8596dd3ad56ff751d5&scene=21">题解</a></p>
-</blockquote>
-</blockquote>
-<hr>
-<h5 id="2-2-3-求最小数"><a href="#2-2-3-求最小数" class="headerlink" title="2.2.3 求最小数"></a>2.2.3 <strong>求最小数</strong></h5><p>两层for循环的先后顺序就无所谓了</p>
-<blockquote>
-<p>例题：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/coin-change/">322.零钱兑换</a> | <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUxNjY5NTYxNA==&mid=2247486848&idx=1&sn=fec1c0c36789f4929a9067910afd600b&scene=21#wechat_redirect">题解</a>、<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/perfect-squares/">279.完全平方数</a> | <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzUxNjY5NTYxNA==&mid=2247486872&idx=2&sn=01a3b81edafd125812d8860e89a6407f&scene=21#wechat_redirect">题解</a></p>
-</blockquote>
+<p>(未完…)</p>
 
                 
             </div>
@@ -653,7 +758,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://hexo.zqca.top/2021/02/28/bei-bao-wen-ti-xiao-jie/">https://hexo.zqca.top/2021/02/28/bei-bao-wen-ti-xiao-jie/</a>
+                    <a href="https://hexo.zqca.top/2021/03/08/ling-san-zhi-shi-dian/">https://hexo.zqca.top/2021/03/08/ling-san-zhi-shi-dian/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -691,16 +796,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">
-                                    <span class="chip bg-color">背包问题</span>
+                                <a href="/tags/JSON/">
+                                    <span class="chip bg-color">JSON</span>
                                 </a>
                             
-                                <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92dp/">
-                                    <span class="chip bg-color">动态规划dp</span>
+                                <a href="/tags/JS/">
+                                    <span class="chip bg-color">JS</span>
                                 </a>
                             
-                                <a href="/tags/Leetcode/">
-                                    <span class="chip bg-color">Leetcode</span>
+                                <a href="/tags/React/">
+                                    <span class="chip bg-color">React</span>
                                 </a>
                             
                         </div>
@@ -1032,9 +1137,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/03/08/ling-san-zhi-shi-dian/">
                     <div class="card-image">
@@ -1052,9 +1158,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-08
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-08
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1067,6 +1173,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1093,30 +1200,30 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/02/27/markdown-bu-wan-quan-yu-fa-ji-lu/">
+                <a href="/2021/02/28/bei-bao-wen-ti-xiao-jie/">
                     <div class="card-image">
                         
-                        <img src="/medias/coverImgs/markdown%E4%B8%8D%E5%AE%8C%E5%85%A8%E8%AF%AD%E6%B3%95%E8%AE%B0%E5%BD%95.jpg" class="responsive-img" alt="markdown不完全语法记录">
+                        <img src="/medias/coverImgs/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98%E5%B0%8F%E7%BB%93.jpg" class="responsive-img" alt="背包问题小结">
                         
-                        <span class="card-title">markdown不完全语法记录</span>
+                        <span class="card-title">背包问题小结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            用markdown写本文，套娃：)
+                            对背包问题进行总结分类
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-27
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-28
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Markdown/" class="post-category">
-                                    Markdown
+                            <a href="/categories/Algorithm/" class="post-category">
+                                    Algorithm
                                 </a>
                             
                             
@@ -1126,12 +1233,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Typora/">
-                        <span class="chip bg-color">Typora</span>
+                    <a href="/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">
+                        <span class="chip bg-color">背包问题</span>
                     </a>
                     
-                    <a href="/tags/Markdown/">
-                        <span class="chip bg-color">Markdown</span>
+                    <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92dp/">
+                        <span class="chip bg-color">动态规划dp</span>
+                    </a>
+                    
+                    <a href="/tags/Leetcode/">
+                        <span class="chip bg-color">Leetcode</span>
                     </a>
                     
                 </div>
