@@ -478,14 +478,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
+                    2.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    9 分
                 </div>
                 
 
@@ -538,6 +538,40 @@
 <h3 id="操作符"><a href="#操作符" class="headerlink" title="+操作符"></a><code>+</code>操作符</h3><blockquote>
 <p>可以将某个类型转换为Number类型，如果转换失败，那么将得到 NaN<br>例如<br><code>+new Date()</code>能将当前时间<code>Mon Mar 08 2021 16:26:54 GMT+0800 (中国标准时间)</code>转换为数字<code>1615192014216</code>，时间戳：<code>这个数字/1000</code>。</p>
 </blockquote>
+<h3 id="理解函数调用"><a href="#理解函数调用" class="headerlink" title="理解函数调用"></a>理解函数调用</h3><ul>
+<li><p>当调用函数时，除了传入在函数定义中显式声明的参数之外，同时还传入两个隐式参数：<code>arguments</code>与<code>this</code>。</p>
+<ul>
+<li><p><code>arguments</code>参数是传入函数的所有参数的集合。具有length属性，表示传入参数的个数，通过arguments参数还可获取那些与函数形参不匹配的参数。在<code>非严格模式</code>下，arguments对象是函数参数的别名，<u>修改arguments对象会修改函数实参</u>，<em>可以通过<strong>严格模式</strong>避免修改函数实参</em>。</p>
+</li>
+<li><p><code>this</code>表示函数上下文，即与函数调用相关联的对象。函数的定义方式和调用方式决定了this的取值。</p>
+</li>
+</ul>
+</li>
+<li><p>函数的调用方式有4种。</p>
+<ul>
+<li><p>作为函数调用：**skulk()**。</p>
+</li>
+<li><p>作为方法调用：**ninja.skulk()**。</p>
+</li>
+<li><p>作为构造函数调用：**new Ninja()**。</p>
+</li>
+<li><p>通过<code>apply</code>与<code>call</code>方法调用：<strong>skulk.apply(ninja)**或</strong>skulk.call(ninja)**。</p>
+</li>
+</ul>
+</li>
+<li><p>函数的调用方式影响<strong>this</strong>的取值。</p>
+<ul>
+<li><u>如果作为函数调用</u>，在<strong>非严格模式</strong>下，this指向全局<strong>window对象</strong>；在严格模式下，this指向<strong>undefined</strong>。</li>
+<li><u>作为方法调用</u>，this通常指向调用的对象。</li>
+<li><u>作为构造函数调用</u>，this指向新创建的对象。</li>
+<li><u>通过<strong>call</strong>或<strong>apply</strong>调用</u>，this指向call或apply的<strong>第一个参数</strong>。</li>
+</ul>
+</li>
+<li><p>箭头函数<strong>没有</strong>单独的this值，this**<em><u>在箭头函数创建时确定</u>**</em>。</p>
+</li>
+<li><p>所有函数均可使用<code>bind</code>方法，**<em><u>创建新函数</u>**</em>，并绑定到bind方法传入的参数上。<br>被绑定的函数与原始函数具有一致的行为。</p>
+</li>
+</ul>
 <hr>
 <hr>
 <h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><h3 id="创建-XMLHttpRequest-对象"><a href="#创建-XMLHttpRequest-对象" class="headerlink" title="创建 XMLHttpRequest 对象"></a>创建 XMLHttpRequest 对象</h3><p>现代浏览器创建 XMLHttpRequest 对象的语法：</p>
@@ -1545,7 +1579,7 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">3.9k</span>&nbsp;字
+                class="white-color">4.3k</span>&nbsp;字
             
             
             
