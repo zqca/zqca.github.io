@@ -471,21 +471,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-09
+                    2021-03-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.2k
+                    2.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    12 分
                 </div>
                 
 
@@ -572,6 +572,106 @@
 <li><p>所有函数均可使用<code>bind方法</code><strong>创建新函数</strong>，并绑定到<strong>bind方法</strong>传入的参数上。<br>被绑定的函数与原始函数具有一致的行为。</p>
 </li>
 </ul>
+<h3 id="设计模式-观察者模式-Observer模式"><a href="#设计模式-观察者模式-Observer模式" class="headerlink" title="设计模式 -观察者模式(Observer模式)"></a>设计模式 -观察者模式(Observer模式)</h3><p>什么是观察者模式 :</p>
+<ul>
+<li>Observer模式是行为模式之一，它的作用是当一个对象的状态发生变化时，能够自动通知其他关联对象，自动刷新对象状态。</li>
+<li>Observer模式提供给关联对象一种同步通信的手段，使某个对象与依赖它的其他对象之间保持状态同步。</li>
+</ul>
+<ul>
+<li>类似于<strong>派发事件</strong>一样的存在，也可以说是<strong>类似订阅事件</strong>，只不过它是实现这些的原理。</li>
+</ul>
+<p>不理解也没关系，代码可以清楚的解释(<strong>真的写的很详细了</strong>！)，如下:</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 创建 观察者类 </span>
+ <span class="token keyword">class</span> <span class="token class-name">Observer</span> <span class="token punctuation">&#123;</span>
+   
+   <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token comment">//事件处理函数集合</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>handles <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+      <span class="token comment">//存放对象：&#123; 事件类型:[处理方法1,...], ...&#125;</span>
+   <span class="token punctuation">&#125;</span>
+     
+  <span class="token comment">//订阅事件</span>
+  <span class="token function">on</span><span class="token punctuation">(</span><span class="token parameter">eventType<span class="token punctuation">,</span> handle</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token comment">//判断非继承属性,也就是自身&#123;&#125;这里面有无这个属性</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span>handles<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span>eventType<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+          <span class="token comment">//如果没有这个事件类型，创建一个对象</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>handles<span class="token punctuation">[</span>eventType<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span>
+      <span class="token comment">//传入的handle参数应该是一个函数</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> handle <span class="token operator">==</span> <span class="token string">'function'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>handles<span class="token punctuation">[</span>eventType<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>handle<span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span> 
+      <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+          <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'缺少回调函数'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+      <span class="token comment">//返回this 是为了 链式操作，一个观察者对象使用on方法后接着使用on方法</span>
+  <span class="token punctuation">&#125;</span>
+     
+  <span class="token comment">//发布事件</span>
+  <span class="token function">emit</span><span class="token punctuation">(</span><span class="token parameter">eventType<span class="token punctuation">,</span> <span class="token operator">...</span>args</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>handles<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span>eventType<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>handles<span class="token punctuation">[</span>eventType<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item<span class="token punctuation">,</span> key<span class="token punctuation">,</span> arr</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+              <span class="token comment">// 把你传入的参数 传递给handle(回调函数)</span>
+              <span class="token comment">//可能一个事件类型有多个处理方法item，所有方法都调用一次</span>
+              <span class="token function">item</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span>
+          <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span> 
+      <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+          <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>eventType<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">事件未注册</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">;</span><span class="token comment">//同上，方便链式操作</span>
+  <span class="token punctuation">&#125;</span>
+     
+  <span class="token comment">//删除事件eventType的某个方法handle</span>
+  <span class="token function">off</span><span class="token punctuation">(</span><span class="token parameter">eventType<span class="token punctuation">,</span> handle</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span>handles<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span>eventType<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+          <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>eventType<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">事件未注册</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span>
+      <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> handle <span class="token operator">!=</span> <span class="token string">'function'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+          <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'缺少回调函数'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span>
+      <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>handles<span class="token punctuation">[</span>eventType<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item<span class="token punctuation">,</span>index<span class="token punctuation">,</span>arr</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+              <span class="token comment">//遍历该事件的所有方法</span>
+              <span class="token keyword">if</span> <span class="token punctuation">(</span>item <span class="token operator">==</span> handle<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                  arr<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+               	  <span class="token comment">//删除这个事件的handle方法</span>
+              <span class="token punctuation">&#125;</span>
+          <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">;</span>              
+  <span class="token punctuation">&#125;</span>
+
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">let</span> <span class="token function-variable function">callFn</span><span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'执行了回调函数callFn'</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">let</span> observer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Observer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">//注册监听事件 'event1'</span>
+observer<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'event1'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>args</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>args<span class="token punctuation">)</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'event1'</span><span class="token punctuation">,</span> callFn<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//首先为事件event1添加一个匿名的处理方法，再添加callFn方法</span>
+
+<span class="token comment">//派发事件 'event1'</span>
+observer<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">'event1'</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//事件event1有两个方法：1)打印所有传入参数args的匿名方法；2)callFn</span>
+<span class="token comment">//这两个方法都会被调用，调用时参数args都是相同的array(1,2,3,4,5)</span>
+
+<span class="token comment">// 删除掉event1的callFn方法</span>
+observer<span class="token punctuation">.</span><span class="token function">off</span><span class="token punctuation">(</span><span class="token string">'event1'</span><span class="token punctuation">,</span> callFn<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+observer<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">'event1'</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>输出：</p>
+<pre class="line-numbers language-none"><code class="language-none">[ 1, 2, 3, 4, 5 ]
+执行了回调函数callFn
+[ 7 ]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
 <hr>
 <hr>
 <h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><h3 id="创建-XMLHttpRequest-对象"><a href="#创建-XMLHttpRequest-对象" class="headerlink" title="创建 XMLHttpRequest 对象"></a>创建 XMLHttpRequest 对象</h3><p>现代浏览器创建 XMLHttpRequest 对象的语法:</p>
@@ -1579,7 +1679,7 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">4.3k</span>&nbsp;字
+                class="white-color">5k</span>&nbsp;字
             
             
             
