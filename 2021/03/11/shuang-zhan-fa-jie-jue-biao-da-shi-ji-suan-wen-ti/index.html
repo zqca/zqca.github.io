@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="markdown不完全语法记录, Zqc&#39;s Blog">
+    <meta name="keywords" content="双栈法解决表达式计算问题, Zqc&#39;s Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>markdown不完全语法记录 | Zqc&#39;s Blog</title>
+    <title>双栈法解决表达式计算问题 | Zqc&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/coverImgs/markdown%E4%B8%8D%E5%AE%8C%E5%85%A8%E8%AF%AD%E6%B3%95%E8%AE%B0%E5%BD%95.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/coverImgs/xxxx.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">markdown不完全语法记录</h1>
+                    <h1 class="description center-align post-title">双栈法解决表达式计算问题</h1>
                 </div>
             </div>
         </div>
@@ -431,12 +431,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Typora/">
-                                <span class="chip bg-color">Typora</span>
+                            <a href="/tags/Leetcode/">
+                                <span class="chip bg-color">Leetcode</span>
                             </a>
                         
-                            <a href="/tags/Markdown/">
-                                <span class="chip bg-color">Markdown</span>
+                            <a href="/tags/%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%A1%E7%AE%97/">
+                                <span class="chip bg-color">表达式计算</span>
                             </a>
                         
                     </div>
@@ -447,8 +447,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Markdown/" class="post-category">
-                                Markdown
+                            <a href="/categories/Algorithm/" class="post-category">
+                                Algorithm
                             </a>
                         
                     </div>
@@ -460,28 +460,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-02-27
+                    2021-03-11
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-02-28
+                    2021-03-11
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    7 分
                 </div>
                 
 
@@ -504,181 +504,230 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="摘要："><a href="#摘要：" class="headerlink" title="摘要："></a>摘要：</h3><p><strong>本文参考了</strong></p>
+                <h3 id="使用两个栈解决表达式计算问题"><a href="#使用两个栈解决表达式计算问题" class="headerlink" title="使用两个栈解决表达式计算问题"></a>使用两个栈解决表达式计算问题</h3><p>参考：</p>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/younghz/Markdown">GitHub</a><br><a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-tutorial.html">菜鸟教程</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/bb0a1c588581">zhaoranWang</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/basic-calculator-ii/solution/shi-yong-shuang-zhan-jie-jue-jiu-ji-biao-c65k/">AC_OIer</a></p>
 </blockquote>
-<p><strong>Markdown语法主要分为如下几大部分</strong><br><strong>标题</strong>，<strong>段落</strong>，<strong>区块引用</strong>，<strong>代码区块</strong>，<strong>强调</strong>，<strong>列表</strong>，<strong>分割线</strong>，<strong>链接</strong>，<strong>图片</strong>，<strong>反斜杠</strong>，<strong>标记符号</strong>。</p>
-<p><strong>进阶</strong><br><strong>注释</strong>，<strong>表格</strong>，<strong>公式</strong></p>
-<hr>
-<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="1-标题"><a href="#1-标题" class="headerlink" title="1. 标题"></a>1. 标题</h3><p>使用可以<code>#</code>来表示1-6级标题。</p>
+<p><strong>对于”表达式计算”这一类问题，你都可以使用这套思路进行解决。</strong></p>
+<p>例题：**<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/basic-calculator/">224. 基本计算器</a>** 、**<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/basic-calculator-ii/solution/">227. 基本计算器 II</a>**</p>
+<h4 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h4><p>对于任何表达式而言，我们都使用两个栈 <code>nums </code>和 <code>ops</code>：</p>
 <blockquote>
-<p># 一级标题<br>## 二级标题<br>###### 六级标题</p>
+<p><strong>nums :</strong> 存放所有的数字<br><strong>ops :</strong> 存放所有的数字以外的操作</p>
 </blockquote>
-<h3 id="2-段落"><a href="#2-段落" class="headerlink" title="2. 段落"></a>2. 段落</h3><p>段落的前后要有空行，所谓的空行是指没有文字内容。若想在段内强制换行的方式是使用<strong>两个以上</strong>空格加上回车。</p>
-<p>效果：</p>
-<blockquote>
-<p>这是一个段落<br>这是段落内强制换行</p>
-</blockquote>
-<h3 id="3-区块引用"><a href="#3-区块引用" class="headerlink" title="3. 区块引用"></a>3. 区块引用</h3><p>在段落的每行或者只在第一行使用符号<code>&gt;</code>,还可使用多个嵌套引用，如：</p>
-<blockquote>
-<p>&gt; 区块引用<br>&gt;&gt; 嵌套引用  </p>
-</blockquote>
-<p>效果：</p>
-<blockquote>
-<blockquote>
-<p>区块引用  </p>
-<blockquote>
-<p>嵌套引用</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h3 id="4-代码区块"><a href="#4-代码区块" class="headerlink" title="4. 代码区块"></a>4. 代码区块</h3><p>代码区块的建立是在每行加上4个空格或者一个制表符（如同写代码一样）。如 ：<br>普通段落：</p>
-<blockquote>
-<p>void main()<br>{<br>   printf(“Hello, Markdown.”);<br>}   </p>
-</blockquote>
-<p>代码区块：</p>
-<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Hello, Markdown."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>注意</strong>:代码区块需要和普通段落之间存在空行。</p>
-<h3 id="5-强调"><a href="#5-强调" class="headerlink" title="5. 强调"></a>5. 强调</h3><blockquote>
-<p>*斜体*，_斜体_<br>**粗体**，__粗体__<br>~~删除线~~<br>&lt;u&gt;带下划线文本&lt;/u&gt;</p>
-</blockquote>
-<p>效果：</p>
-<blockquote>
-<p><em>斜体</em>，<em>斜体</em><br><strong>粗体</strong>，<strong>粗体</strong><br><del>删除线</del><br><u>带下划线文本</u></p>
-</blockquote>
-<h3 id="6-列表"><a href="#6-列表" class="headerlink" title="6. 列表"></a>6. 列表</h3><p>使用<code>·</code>、<code>+</code>、或<code>-</code>标记无序列表，如：</p>
-<blockquote>
-<p>-（+*） 第一项<br>-（+*） 第二项</p>
-</blockquote>
-<p><strong>注意</strong>：标记后面最少有一个<code>空格</code>或<code>制表符</code>。若不在引用区块中，<code>必须</code>与前方段落之间存在空行。</p>
-<p>效果：</p>
-<blockquote>
+<p>然后从前往后做，对遍历到的字符做分情况讨论：</p>
 <ul>
-<li>第一项</li>
-<li>第二项</li>
-</ul>
-</blockquote>
-<p>有序列表的标记方式是将上述的符号换成数字,并辅以<code>.</code>，如：</p>
-<blockquote>
-<p>1 . 第一项<br>2 . 第二项</p>
-</blockquote>
-<p>效果：</p>
+<li><p><code>空格</code> : 跳过</p>
+</li>
+<li><p><code>( </code>: 直接加入 <strong>ops</strong> 中，等待与之匹配的<code> )</code></p>
+</li>
+<li><p><code>) </code>: 使用现有的 <strong>nums</strong> 和 <strong>ops</strong> 进行计算，直到遇到最近的一个左括号为止，计算结果放到 <strong>nums</strong></p>
+</li>
+<li><p><code>数字</code> : 从当前位置开始继续往后取，将整一个连续数字整体取出，加入 <strong>nums</strong></p>
+</li>
+<li><p><code>+-*/^%...等二元操作符</code>: 需要将操作符放入 <strong>ops</strong> 中。有以下放入原则：</p>
 <blockquote>
 <ol>
-<li>第一项</li>
-<li>第二项</li>
+<li><p>如果当前操作符的优先级比<strong>ops</strong> 栈顶元素的优先级高，直接放入；</p>
+</li>
+<li><p>否则，**”消耗”<strong>栈顶元素，直到</strong>ops** 栈顶元素的优先级比当前操作符的优先级<strong>低</strong>，<strong>最后放入当前操作符</strong>。</p>
+</li>
 </ol>
+<p>具体来说，从<strong>nums</strong>中取出两个数字(top()、pop())，用<strong>ops</strong> <strong>栈顶元素</strong>进行计算，将计算结果放回<strong>nums</strong>中。如果<strong>ops</strong>栈顶元素的优先级和当前操作符的优先级相同，表示遇到了小括号，只需要弹出栈顶元素即可。</p>
 </blockquote>
-<h3 id="7-分割线"><a href="#7-分割线" class="headerlink" title="7. 分割线"></a>7. 分割线</h3><p>分割线最常使用就是三个或以上<code>*</code>，还可以使用<code>-</code>和<code>_</code>。</p>
-<blockquote>
-<p>我是一条分割线：</p>
-<hr>
-<p>上面是一条分割线，使用了4个<code>*</code>。</p>
-</blockquote>
-<h3 id="8-链接"><a href="#8-链接" class="headerlink" title="8. 链接"></a>8. 链接</h3><p>链接可以由两种形式生成：<strong>行内式</strong>和<strong>参考式</strong>。<br><strong>行内式</strong>：</p>
-<blockquote>
-<p>[younghz的Markdown库](<a target="_blank" rel="noopener" href="https://github.com/younghz/Markdown">https://github.com/younghz/Markdown</a> “Markdown”)。</p>
-</blockquote>
-<p>效果：</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/younghz/Markdown" title="Markdown">younghz的Markdown库</a>。</p>
-</blockquote>
-<p><strong>参考式</strong>：</p>
-<blockquote>
-<p>[younghz的Markdown库1][1]<br>[younghz的Markdown库2][2]<br>[1]:<a target="_blank" rel="noopener" href="https://github.com/younghz/Markdown">https://github.com/younghz/Markdown</a> “Markdown”<br>[2]:<a target="_blank" rel="noopener" href="https://github.com/younghz/Markdown">https://github.com/younghz/Markdown</a> “Markdown”    </p>
-</blockquote>
-<p>效果：</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/younghz/Markdown" title="Markdown">younghz的Markdown库1</a><br><a target="_blank" rel="noopener" href="https://github.com/younghz/Markdown" title="Markdown">younghz的Markdown库2</a></p>
-</blockquote>
-<p><strong>注意</strong>：上述的<code>[1]:https://github.com/younghz/Markdown &quot;Markdown&quot;</code>不出现在区块中。</p>
-<h3 id="9-图片"><a href="#9-图片" class="headerlink" title="9. 图片"></a>9. 图片</h3><p>添加图片的形式和链接相似，只需在链接的基础上前方加一个<code>！</code>。<br>语法：</p>
-<blockquote>
-<p>![<code>alt 属性文本</code>](<code>图片地址</code> <code>可选标题</code>)<br>![RUNOOB 图标](<a target="_blank" rel="noopener" href="http://static.runoob.com/images/runoob-logo.png">http://static.runoob.com/images/runoob-logo.png</a> “RUNOOB”)</p>
-</blockquote>
-<p>效果：<br><img src="http://static.runoob.com/images/runoob-logo.png" alt="RUNOOB 图标" title="RUNOOB"></p>
-<h3 id="10-反斜杠"><a href="#10-反斜杠" class="headerlink" title="10. 反斜杠"></a>10. 反斜杠</h3><p>相当于<strong>反转义</strong>作用。使符号成为普通符号，似乎不能成功作用于下面那个符号。</p>
-<h3 id="11-标记符号"><a href="#11-标记符号" class="headerlink" title="11. 标记符号"></a>11. 标记符号</h3><p><code>Tab键</code>上面那个符号起到标记作用。如：</p>
-<blockquote>
-<p>`ctrl+a`<br>效果：<br><code>ctrl+a</code>    </p>
-</blockquote>
-<hr>
-<h2 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h2><h3 id="1-使用公式"><a href="#1-使用公式" class="headerlink" title="1. 使用公式"></a>1. 使用公式</h3><p>当你需要在编辑器中插入数学公式时，可以使用两个美元符 <code>$$</code> 包裹 TeX 或 LaTeX 格式的数学公式来实现。提交后，问答和文章页会根据需要加载 <code>Mathjax</code> 对数学公式进行渲染。如：</p>
-<blockquote>
-<p><code>$$</code><br>E = mc^2<br><code>$$</code></p>
-</blockquote>
-<p>效果：</p>
-<blockquote>
-<p>$$<br>E = mc^2<br>$$</p>
-</blockquote>
-<h3 id="2-注释"><a href="#2-注释" class="headerlink" title="2. 注释"></a>2. 注释</h3><h4 id="2-1-使用html标签"><a href="#2-1-使用html标签" class="headerlink" title="2.1 使用html标签"></a>2.1 使用html标签</h4><p>由于markdown内嵌html语法，因此可以用特殊的html标签以及html注释进行注释。<strong>注意</strong>，使用HTML标签需要在前面空一行。</p>
-<p>示例1：    </p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token style-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span><span class="token style language-css"><span class="token property">display</span><span class="token punctuation">:</span> none</span><span class="token punctuation">'</span></span></span><span class="token punctuation">></span></span>
-我是注释，不会在浏览器中显示。
-我也是注释。
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<h4 id="细节："><a href="#细节：" class="headerlink" title="细节："></a>细节：</h4><ul>
+<li>正确设置优先级表格，没写的位置表示<strong>正常的表达式</strong>不会有这种优先级比较；</li>
+<li>初始化数字栈<strong>nums</strong>时，为了防止中间结果溢出，选择<code>long</code>类型而不是<code>int</code>；放入一个<code>0</code>，针对输入：<code>-1</code>这种情况；</li>
+<li>定义一个优先级最低的操作符<code>#</code>，在字符串最后添加这个操作符，初始化<strong>ops</strong>时放入一个<code>#</code>；</li>
+<li>需要区分当前数字是不是数字字符串的<strong>首位</strong>(“1”是”123”的首位，读入”1”和”2”会有不同的处理方法)</li>
+</ul>
+<h4 id="完整代码："><a href="#完整代码：" class="headerlink" title="完整代码："></a>完整代码：</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;stack&gt;
+#include &lt;cmath&gt;
+&#x2F;&#x2F;通用，不止针对这一题，对于所有二元运算（含小括号）适用
 
-<p>示例2：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!--哈哈我是注释，不会在浏览器中显示。--></span>
-<span class="token comment">&lt;!--
-哈哈我是多段
-注释，
-不会在浏览器中显示。
---></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+using namespace std;
+
+&#x2F;&#x2F;1.初始化
+char table[8][8] &#x3D; &#123;   &#x2F;&#x2F;算符优先级表,定义&#39;#&#39;优先级最低
+&#x2F;&#x2F;         +    -    *    &#x2F;    ^    (    )    #    &#x2F;&#x2F; 当前运算符
+
+&#x2F;* + *&#x2F;   &#39;&gt;&#39;, &#39;&gt;&#39;, &#39;&lt;&#39;, &#39;&lt;&#39;, &#39;&lt;&#39;, &#39;&lt;&#39;, &#39;&gt;&#39;, &#39;&gt;&#39;,
+&#x2F;* - *&#x2F;   &#39;&gt;&#39;, &#39;&gt;&#39;, &#39;&lt;&#39;, &#39;&lt;&#39;, &#39;&lt;&#39;, &#39;&lt;&#39;, &#39;&gt;&#39;, &#39;&gt;&#39;,
+&#x2F;* * *&#x2F;   &#39;&gt;&#39;, &#39;&gt;&#39;, &#39;&gt;&#39;, &#39;&gt;&#39;, &#39;&lt;&#39;, &#39;&lt;&#39;, &#39;&gt;&#39;, &#39;&gt;&#39;,
+&#x2F;* &#x2F; *&#x2F;   &#39;&gt;&#39;, &#39;&gt;&#39;, &#39;&gt;&#39;, &#39;&gt;&#39;, &#39;&lt;&#39;, &#39;&lt;&#39;, &#39;&gt;&#39;, &#39;&gt;&#39;,
+&#x2F;* ^ *&#x2F;   &#39;&gt;&#39;, &#39;&gt;&#39;, &#39;&gt;&#39;, &#39;&gt;&#39;, &#39;&gt;&#39;, &#39;&lt;&#39;, &#39;&gt;&#39;, &#39;&gt;&#39;,
+&#x2F;* ( *&#x2F;   &#39;&lt;&#39;, &#39;&lt;&#39;, &#39;&lt;&#39;, &#39;&lt;&#39;, &#39;&lt;&#39;, &#39;&lt;&#39;, &#39;&#x3D;&#39;, &#39; &#39;,
+&#x2F;* ) *&#x2F;   &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;,
+&#x2F;* # *&#x2F;   &#39;&lt;&#39;, &#39;&lt;&#39;, &#39;&lt;&#39;, &#39;&lt;&#39;, &#39;&lt;&#39;, &#39;&lt;&#39;, &#39; &#39;, &#39;&#x3D;&#39;
+&#x2F;&#x2F;栈顶运算符
+&#125;;
+
+int getIndex(char a) &#123;
+	switch (a) &#123;
+		case &#39;+&#39;:
+			return 0;
+		case &#39;-&#39;:
+			return 1;
+		case &#39;*&#39;:
+			return 2;
+		case &#39;&#x2F;&#39;:
+			return 3;
+		case &#39;^&#39;:
+			return 4;
+		case &#39;(&#39;:
+			return 5;
+		case &#39;)&#39;:
+			return 6;
+		case &#39;#&#39;:
+			return 7;
+	&#125;
+	return -1;&#x2F;&#x2F;没有含义的返回值
+&#125;
+
+bool isDigit(char ch) &#123;
+    if(ch &gt;&#x3D; &#39;0&#39; &amp;&amp; ch &lt;&#x3D; &#39;9&#39;) return true;
+    return false;
+&#125;
+
+long Compute(char ch, int a, int b) &#123;
+    &#x2F;&#x2F;给定操作符ch,返回计算结果
+    switch(ch) &#123;
+        case &#39;+&#39; :
+            return a + b;
+        case &#39;-&#39; :
+            return a - b;
+        case &#39;*&#39; :
+            return a * b;
+        case &#39;&#x2F;&#39; :
+            if(b &#x3D;&#x3D; 0) return 0;
+            return a &#x2F; b;
+        case &#39;^&#39; :
+            return pow(a + 0.0, b);  &#x2F;&#x2F;pow()运算要求第一个参数为double
+    &#125;
+
+    return 0;&#x2F;&#x2F;没有含义的返回值
+        
+&#125;
+
+int calculate(string s) &#123;
+    stack&lt;long&gt; nums;&#x2F;&#x2F;数字栈
+    stack&lt;char&gt; ops;&#x2F;&#x2F;操作符栈
+
+    s &#x3D; s + &quot;#&quot;;
+    nums.push(0);&#x2F;&#x2F;针对 -1这种情况
+    ops.push(&#39;#&#39;);
+
+    char ch;&#x2F;&#x2F;当前字符
+    int num;&#x2F;&#x2F;即将入栈的数字
+    int cur_index;&#x2F;&#x2F;当前符号的索引
+    int top_index;&#x2F;&#x2F;当前符号栈顶元素的索引
+    int num1, num2;&#x2F;&#x2F;前后两个运算数
+
+    &#x2F;&#x2F;2.开始遍历
+    bool flag &#x3D; true;&#x2F;&#x2F;当前字符串中，下一个数字是不是 首位。“123”,1是首位
+    for(int i &#x3D; 0; i &lt; s.length(); i++) &#123;
+        ch &#x3D; s[i];
+        if(ch &#x3D;&#x3D; &#39; &#39;) continue;&#x2F;&#x2F;跳过空格
+
+        if(isDigit(ch)) &#123;
+            &#x2F;&#x2F;数字
+            if(flag) &#123;
+                nums.push(ch - &#39;0&#39;);
+                flag &#x3D; false;
+            &#125;
+            else &#123;
+                num &#x3D; nums.top() * 10 + ch - &#39;0&#39;;
+                nums.pop();
+                nums.push(num);      
+            &#125;  
+        &#125;
+        else &#123;
+            &#x2F;&#x2F;符号
+            cur_index &#x3D; getIndex(ch);
+            top_index &#x3D; getIndex(ops.top());
+            if(table[top_index][cur_index] &#x3D;&#x3D; &#39;&lt;&#39;) &#123;
+                &#x2F;&#x2F;现在的操作符比栈顶元素的优先级更高
+                ops.push(ch);
+            &#125;
+            else if (table[top_index][cur_index] &#x3D;&#x3D; &#39;&gt;&#39;) &#123;
+                &#x2F;&#x2F;栈顶元素的优先级更高,弹出两个数以及操作符开始计算
+                while(table[top_index][cur_index] &#x3D;&#x3D; &#39;&gt;&#39;) &#123;
+                    &#x2F;&#x2F;栈顶元素优先级更高，开始计算.这里的操作符不会是括号，看优先级表table
+                    num2 &#x3D; nums.top();nums.pop();
+                    num1 &#x3D; nums.top();nums.pop();
+                    num &#x3D; Compute(ops.top(), num1, num2);
+                    &#x2F;&#x2F;放入刚才的计算结果
+                    nums.push(num);
+                    &#x2F;&#x2F;下一个操作符
+                    ops.pop();
+                    top_index &#x3D; getIndex(ops.top());
+                &#125;
+
+                if(table[top_index][cur_index] &#x3D;&#x3D; &#39;&#x3D;&#39;) &#123;
+                    &#x2F;&#x2F;说明遇到了右括号与之前的左括号相等，出栈即可
+                    ops.pop();
+                &#125;
+                else &#123;
+                    &#x2F;&#x2F;此时，栈顶元素的优先级会比当前元素的优先级低，放入当前元素
+                    ops.push(ch);
+                &#125;    
+            &#125;
+            else if(table[top_index][cur_index] &#x3D;&#x3D; &#39;&#x3D;&#39;) &#123;
+                &#x2F;&#x2F;如果当前元素和栈顶元素优先级相同，例如输入的表达式为&quot;(1)&quot;
+                ops.pop();
+            &#125;
+            
+            flag &#x3D; true;&#x2F;&#x2F;下一个数字是首位
+        &#125;
+    &#125;
+
+    return nums.top();
+
+&#125;
+
+int main() &#123;
+    string s &#x3D; &quot;2 *7-4&#x2F;3+(2^3&#x2F;2)&quot;;&#x2F;&#x2F;整数除法仅保留整数部分
+    cout &lt;&lt; calculate(s) &lt;&lt; endl;
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
-<p>效果：没有效果（滑稽）</p>
-<div style="display: none">
-    我是注释，不会在浏览器中显示。
-    我也是注释。
-</div>
-<!--哈哈我是注释，不会在浏览器中显示。-->
 
-<!--
-    哈哈我是多段
-    注释，
-    不会在浏览器中显示。
--->
 
-<h4 id="2-2-使用hack方法（稳定）"><a href="#2-2-使用hack方法（稳定）" class="headerlink" title="2.2 使用hack方法（稳定）"></a>2.2 使用hack方法（稳定）</h4><p>hack方法就是利用markdown的解析原理来实现注释的。hack方法比上面2种方法稳定得多，但是<strong>语义化太差</strong>。**<em>注释前后需要空行**</em></p>
-<p>示例：</p>
-<blockquote>
-<p>[comment]: &lt;&gt; (哈哈我是注释，不会在浏览器中显示。)<br>[comment]: &lt;&gt; (哈哈我是注释，不会在浏览器中显示。)<br>[comment]: &lt;&gt; (哈哈我是注释，不会在浏览器中显示。)<br>[//]: &lt;&gt; (哈哈我是注释，不会在浏览器中显示。)<br>[//]: # (哈哈我是注释，不会在浏览器中显示。)</p>
-</blockquote>
-<p>效果：还是没有效果（滑稽）</p>
-<h3 id="3-表格"><a href="#3-表格" class="headerlink" title="3. 表格"></a>3. 表格</h3><p>Markdown 制作表格使用<code> |</code> 来分隔不同的单元格，使用 <code>- </code>来分隔表头和其他行。<br>我们可以设置表格的对齐方式：</p>
-<blockquote>
-<p><code>-:</code> 设置内容和标题栏居右对齐。<br><code>:-</code> 设置内容和标题栏居左对齐。<br><code>:-:</code> 设置内容和标题栏居中对齐。</p>
-</blockquote>
-<p>示例：</p>
-<blockquote>
-<p>| 左对齐 | 右对齐 | 居中对齐 |<br>| :----- | ----: | :----: |<br>| 单元格 | 单元格 | 单元格 |<br>| 单元格 | 单元格 | 单元格 |</p>
-</blockquote>
-<p>效果：</p>
-<table>
-<thead>
-<tr>
-<th align="left">左对齐</th>
-<th align="right">右对齐</th>
-<th align="center">居中对齐</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">单元格</td>
-<td align="right">单元格</td>
-<td align="center">单元格</td>
-</tr>
-<tr>
-<td align="left">单元格</td>
-<td align="right">单元格</td>
-<td align="center">单元格</td>
-</tr>
-</tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 
             </div>
@@ -705,7 +754,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://hexo.zqca.top/2021/02/27/markdown-bu-wan-quan-yu-fa-ji-lu/">https://hexo.zqca.top/2021/02/27/markdown-bu-wan-quan-yu-fa-ji-lu/</a>
+                    <a href="https://hexo.zqca.top/2021/03/11/shuang-zhan-fa-jie-jue-biao-da-shi-ji-suan-wen-ti/">https://hexo.zqca.top/2021/03/11/shuang-zhan-fa-jie-jue-biao-da-shi-ji-suan-wen-ti/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -743,12 +792,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Typora/">
-                                    <span class="chip bg-color">Typora</span>
+                                <a href="/tags/Leetcode/">
+                                    <span class="chip bg-color">Leetcode</span>
                                 </a>
                             
-                                <a href="/tags/Markdown/">
-                                    <span class="chip bg-color">Markdown</span>
+                                <a href="/tags/%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%A1%E7%AE%97/">
+                                    <span class="chip bg-color">表达式计算</span>
                                 </a>
                             
                         </div>
@@ -1080,34 +1129,88 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/02/28/bei-bao-wen-ti-xiao-jie/">
+                <a href="/2021/03/11/shuang-zhan-fa-jie-jue-biao-da-shi-ji-suan-wen-ti/">
                     <div class="card-image">
                         
-                        <img src="/medias/coverImgs/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98%E5%B0%8F%E7%BB%93.jpg" class="responsive-img" alt="背包问题小结">
+                        <img src="/medias/coverImgs/xxxx.jpg" class="responsive-img" alt="双栈法解决表达式计算问题">
                         
-                        <span class="card-title">背包问题小结</span>
+                        <span class="card-title">双栈法解决表达式计算问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            对背包问题进行总结分类
+                            使用两个栈解决中缀表达式计算的问题，具有通用性
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-11
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
                             <a href="/categories/Algorithm/" class="post-category">
                                     Algorithm
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Leetcode/">
+                        <span class="chip bg-color">Leetcode</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%A1%E7%AE%97/">
+                        <span class="chip bg-color">表达式计算</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/03/09/books/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/coverImgs/Books.jpg" class="responsive-img" alt="Books">
+                        
+                        <span class="card-title">Books</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            提供一些书的在线阅读
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-09
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Books/" class="post-category">
+                                    Books
                                 </a>
                             
                             
@@ -1129,43 +1232,14 @@
                         <span class="chip bg-color">Leetcode</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/02/25/hello-world/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-25
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            zqca
-                            
-                        </span>
-                    </div>
+                    <a href="/tags/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">回溯算法</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
+                        <span class="chip bg-color">二叉树</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1331,13 +1405,6 @@
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
 
 
