@@ -310,7 +310,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/coverImgs/xxxx.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/coverImgs/%E5%8F%8C%E6%A0%88%E6%B3%95%E8%A7%A3%E5%86%B3%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%A1%E7%AE%97%E9%97%AE%E9%A2%98.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -474,14 +474,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    5 分
                 </div>
                 
 
@@ -506,12 +506,14 @@
             <div id="articleContent">
                 <h3 id="使用两个栈解决表达式计算问题"><a href="#使用两个栈解决表达式计算问题" class="headerlink" title="使用两个栈解决表达式计算问题"></a>使用两个栈解决表达式计算问题</h3><p>参考：</p>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/bb0a1c588581">zhaoranWang</a></p>
-<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/basic-calculator-ii/solution/shi-yong-shuang-zhan-jie-jue-jiu-ji-biao-c65k/">AC_OIer</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/bb0a1c588581">zhaoranWang</a>、<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/basic-calculator-ii/solution/shi-yong-shuang-zhan-jie-jue-jiu-ji-biao-c65k/">AC_OIer</a></p>
 </blockquote>
-<p><strong>对于”表达式计算”这一类问题，你都可以使用这套思路进行解决。</strong></p>
-<p>例题：**<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/basic-calculator/">224. 基本计算器</a>** 、**<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/basic-calculator-ii/solution/">227. 基本计算器 II</a>**</p>
-<h4 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h4><p>对于任何表达式而言，我们都使用两个栈 <code>nums </code>和 <code>ops</code>：</p>
+<p>对于<strong>表达式计算</strong>这一类问题，你都可以使用这套思路进行解决。</p>
+<p> 例题:</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/basic-calculator/">224. 基本计算器</a>、<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/basic-calculator-ii/solution/">227. 基本计算器 II</a></p>
+</blockquote>
+<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><p>对于任何表达式而言，我们都使用两个栈 <code>nums </code>和 <code>ops</code>：</p>
 <blockquote>
 <p><strong>nums :</strong> 存放所有的数字<br><strong>ops :</strong> 存放所有的数字以外的操作</p>
 </blockquote>
@@ -530,171 +532,171 @@
 <ol>
 <li><p>如果当前操作符的优先级比<strong>ops</strong> 栈顶元素的优先级高，直接放入；</p>
 </li>
-<li><p>否则，**”消耗”<strong>栈顶元素，直到</strong>ops** 栈顶元素的优先级比当前操作符的优先级<strong>低</strong>，<strong>最后放入当前操作符</strong>。</p>
+<li><p>否则，<strong>消耗</strong>栈顶元素，直到<strong>ops</strong> 栈顶元素的优先级比当前操作符的优先级<strong>低</strong>，<strong>最后放入当前操作符</strong>。</p>
 </li>
 </ol>
 <p>具体来说，从<strong>nums</strong>中取出两个数字(top()、pop())，用<strong>ops</strong> <strong>栈顶元素</strong>进行计算，将计算结果放回<strong>nums</strong>中。如果<strong>ops</strong>栈顶元素的优先级和当前操作符的优先级相同，表示遇到了小括号，只需要弹出栈顶元素即可。</p>
 </blockquote>
 </li>
 </ul>
-<h4 id="细节："><a href="#细节：" class="headerlink" title="细节："></a>细节：</h4><ul>
+<h4 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h4><ul>
 <li>正确设置优先级表格，没写的位置表示<strong>正常的表达式</strong>不会有这种优先级比较；</li>
 <li>初始化数字栈<strong>nums</strong>时，为了防止中间结果溢出，选择<code>long</code>类型而不是<code>int</code>；放入一个<code>0</code>，针对输入：<code>-1</code>这种情况；</li>
 <li>定义一个优先级最低的操作符<code>#</code>，在字符串最后添加这个操作符，初始化<strong>ops</strong>时放入一个<code>#</code>；</li>
 <li>需要区分当前数字是不是数字字符串的<strong>首位</strong>(“1”是”123”的首位，读入”1”和”2”会有不同的处理方法)</li>
 </ul>
-<h4 id="完整代码："><a href="#完整代码：" class="headerlink" title="完整代码："></a>完整代码：</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
-#include &lt;string&gt;
-#include &lt;stack&gt;
-#include &lt;cmath&gt;
-&#x2F;&#x2F;通用，不止针对这一题，对于所有二元运算（含小括号）适用
+<h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;string></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stack></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cmath></span></span>
+<span class="token comment">//通用，不止针对这一题，对于所有二元运算（含小括号）适用</span>
 
-using namespace std;
+using namespace std<span class="token punctuation">;</span>
 
-&#x2F;&#x2F;1.初始化
-char table[8][8] &#x3D; &#123;   &#x2F;&#x2F;算符优先级表,定义&#39;#&#39;优先级最低
-&#x2F;&#x2F;         +    -    *    &#x2F;    ^    (    )    #    &#x2F;&#x2F; 当前运算符
+<span class="token comment">//1.初始化</span>
+<span class="token keyword">char</span> table<span class="token punctuation">[</span><span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">8</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span>   <span class="token comment">//算符优先级表,定义'#'优先级最低</span>
+<span class="token comment">//         +    -    *    /    ^    (    )    #    // 当前运算符</span>
 
-&#x2F;* + *&#x2F;   &#39;&gt;&#39;, &#39;&gt;&#39;, &#39;&lt;&#39;, &#39;&lt;&#39;, &#39;&lt;&#39;, &#39;&lt;&#39;, &#39;&gt;&#39;, &#39;&gt;&#39;,
-&#x2F;* - *&#x2F;   &#39;&gt;&#39;, &#39;&gt;&#39;, &#39;&lt;&#39;, &#39;&lt;&#39;, &#39;&lt;&#39;, &#39;&lt;&#39;, &#39;&gt;&#39;, &#39;&gt;&#39;,
-&#x2F;* * *&#x2F;   &#39;&gt;&#39;, &#39;&gt;&#39;, &#39;&gt;&#39;, &#39;&gt;&#39;, &#39;&lt;&#39;, &#39;&lt;&#39;, &#39;&gt;&#39;, &#39;&gt;&#39;,
-&#x2F;* &#x2F; *&#x2F;   &#39;&gt;&#39;, &#39;&gt;&#39;, &#39;&gt;&#39;, &#39;&gt;&#39;, &#39;&lt;&#39;, &#39;&lt;&#39;, &#39;&gt;&#39;, &#39;&gt;&#39;,
-&#x2F;* ^ *&#x2F;   &#39;&gt;&#39;, &#39;&gt;&#39;, &#39;&gt;&#39;, &#39;&gt;&#39;, &#39;&gt;&#39;, &#39;&lt;&#39;, &#39;&gt;&#39;, &#39;&gt;&#39;,
-&#x2F;* ( *&#x2F;   &#39;&lt;&#39;, &#39;&lt;&#39;, &#39;&lt;&#39;, &#39;&lt;&#39;, &#39;&lt;&#39;, &#39;&lt;&#39;, &#39;&#x3D;&#39;, &#39; &#39;,
-&#x2F;* ) *&#x2F;   &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;, &#39; &#39;,
-&#x2F;* # *&#x2F;   &#39;&lt;&#39;, &#39;&lt;&#39;, &#39;&lt;&#39;, &#39;&lt;&#39;, &#39;&lt;&#39;, &#39;&lt;&#39;, &#39; &#39;, &#39;&#x3D;&#39;
-&#x2F;&#x2F;栈顶运算符
-&#125;;
+<span class="token comment">/* + */</span>   <span class="token string">'>'</span><span class="token punctuation">,</span> <span class="token string">'>'</span><span class="token punctuation">,</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span> <span class="token string">'>'</span><span class="token punctuation">,</span> <span class="token string">'>'</span><span class="token punctuation">,</span>
+<span class="token comment">/* - */</span>   <span class="token string">'>'</span><span class="token punctuation">,</span> <span class="token string">'>'</span><span class="token punctuation">,</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span> <span class="token string">'>'</span><span class="token punctuation">,</span> <span class="token string">'>'</span><span class="token punctuation">,</span>
+<span class="token comment">/* * */</span>   <span class="token string">'>'</span><span class="token punctuation">,</span> <span class="token string">'>'</span><span class="token punctuation">,</span> <span class="token string">'>'</span><span class="token punctuation">,</span> <span class="token string">'>'</span><span class="token punctuation">,</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span> <span class="token string">'>'</span><span class="token punctuation">,</span> <span class="token string">'>'</span><span class="token punctuation">,</span>
+<span class="token comment">/* / */</span>   <span class="token string">'>'</span><span class="token punctuation">,</span> <span class="token string">'>'</span><span class="token punctuation">,</span> <span class="token string">'>'</span><span class="token punctuation">,</span> <span class="token string">'>'</span><span class="token punctuation">,</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span> <span class="token string">'>'</span><span class="token punctuation">,</span> <span class="token string">'>'</span><span class="token punctuation">,</span>
+<span class="token comment">/* ^ */</span>   <span class="token string">'>'</span><span class="token punctuation">,</span> <span class="token string">'>'</span><span class="token punctuation">,</span> <span class="token string">'>'</span><span class="token punctuation">,</span> <span class="token string">'>'</span><span class="token punctuation">,</span> <span class="token string">'>'</span><span class="token punctuation">,</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span> <span class="token string">'>'</span><span class="token punctuation">,</span> <span class="token string">'>'</span><span class="token punctuation">,</span>
+<span class="token comment">/* ( */</span>   <span class="token string">'&lt;'</span><span class="token punctuation">,</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span> <span class="token string">'='</span><span class="token punctuation">,</span> <span class="token string">' '</span><span class="token punctuation">,</span>
+<span class="token comment">/* ) */</span>   <span class="token string">' '</span><span class="token punctuation">,</span> <span class="token string">' '</span><span class="token punctuation">,</span> <span class="token string">' '</span><span class="token punctuation">,</span> <span class="token string">' '</span><span class="token punctuation">,</span> <span class="token string">' '</span><span class="token punctuation">,</span> <span class="token string">' '</span><span class="token punctuation">,</span> <span class="token string">' '</span><span class="token punctuation">,</span> <span class="token string">' '</span><span class="token punctuation">,</span>
+<span class="token comment">/* # */</span>   <span class="token string">'&lt;'</span><span class="token punctuation">,</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span> <span class="token string">'&lt;'</span><span class="token punctuation">,</span> <span class="token string">' '</span><span class="token punctuation">,</span> <span class="token string">'='</span>
+<span class="token comment">//栈顶运算符</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
 
-int getIndex(char a) &#123;
-	switch (a) &#123;
-		case &#39;+&#39;:
-			return 0;
-		case &#39;-&#39;:
-			return 1;
-		case &#39;*&#39;:
-			return 2;
-		case &#39;&#x2F;&#39;:
-			return 3;
-		case &#39;^&#39;:
-			return 4;
-		case &#39;(&#39;:
-			return 5;
-		case &#39;)&#39;:
-			return 6;
-		case &#39;#&#39;:
-			return 7;
-	&#125;
-	return -1;&#x2F;&#x2F;没有含义的返回值
-&#125;
+<span class="token keyword">int</span> <span class="token function">getIndex</span><span class="token punctuation">(</span><span class="token keyword">char</span> a<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">switch</span> <span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">case</span> <span class="token string">'+'</span><span class="token operator">:</span>
+			<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+		<span class="token keyword">case</span> <span class="token string">'-'</span><span class="token operator">:</span>
+			<span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+		<span class="token keyword">case</span> <span class="token string">'*'</span><span class="token operator">:</span>
+			<span class="token keyword">return</span> <span class="token number">2</span><span class="token punctuation">;</span>
+		<span class="token keyword">case</span> <span class="token string">'/'</span><span class="token operator">:</span>
+			<span class="token keyword">return</span> <span class="token number">3</span><span class="token punctuation">;</span>
+		<span class="token keyword">case</span> <span class="token string">'^'</span><span class="token operator">:</span>
+			<span class="token keyword">return</span> <span class="token number">4</span><span class="token punctuation">;</span>
+		<span class="token keyword">case</span> <span class="token string">'('</span><span class="token operator">:</span>
+			<span class="token keyword">return</span> <span class="token number">5</span><span class="token punctuation">;</span>
+		<span class="token keyword">case</span> <span class="token string">')'</span><span class="token operator">:</span>
+			<span class="token keyword">return</span> <span class="token number">6</span><span class="token punctuation">;</span>
+		<span class="token keyword">case</span> <span class="token string">'#'</span><span class="token operator">:</span>
+			<span class="token keyword">return</span> <span class="token number">7</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span><span class="token comment">//没有含义的返回值</span>
+<span class="token punctuation">&#125;</span>
 
-bool isDigit(char ch) &#123;
-    if(ch &gt;&#x3D; &#39;0&#39; &amp;&amp; ch &lt;&#x3D; &#39;9&#39;) return true;
-    return false;
-&#125;
+bool <span class="token function">isDigit</span><span class="token punctuation">(</span><span class="token keyword">char</span> ch<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>ch <span class="token operator">>=</span> <span class="token string">'0'</span> <span class="token operator">&amp;&amp;</span> ch <span class="token operator">&lt;=</span> <span class="token string">'9'</span><span class="token punctuation">)</span> <span class="token keyword">return</span> true<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> false<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-long Compute(char ch, int a, int b) &#123;
-    &#x2F;&#x2F;给定操作符ch,返回计算结果
-    switch(ch) &#123;
-        case &#39;+&#39; :
-            return a + b;
-        case &#39;-&#39; :
-            return a - b;
-        case &#39;*&#39; :
-            return a * b;
-        case &#39;&#x2F;&#39; :
-            if(b &#x3D;&#x3D; 0) return 0;
-            return a &#x2F; b;
-        case &#39;^&#39; :
-            return pow(a + 0.0, b);  &#x2F;&#x2F;pow()运算要求第一个参数为double
-    &#125;
+<span class="token keyword">long</span> <span class="token function">Compute</span><span class="token punctuation">(</span><span class="token keyword">char</span> ch<span class="token punctuation">,</span> <span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">//给定操作符ch,返回计算结果</span>
+    <span class="token keyword">switch</span><span class="token punctuation">(</span>ch<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">case</span> <span class="token string">'+'</span> <span class="token operator">:</span>
+            <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+        <span class="token keyword">case</span> <span class="token string">'-'</span> <span class="token operator">:</span>
+            <span class="token keyword">return</span> a <span class="token operator">-</span> b<span class="token punctuation">;</span>
+        <span class="token keyword">case</span> <span class="token string">'*'</span> <span class="token operator">:</span>
+            <span class="token keyword">return</span> a <span class="token operator">*</span> b<span class="token punctuation">;</span>
+        <span class="token keyword">case</span> <span class="token string">'/'</span> <span class="token operator">:</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>b <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> a <span class="token operator">/</span> b<span class="token punctuation">;</span>
+        <span class="token keyword">case</span> <span class="token string">'^'</span> <span class="token operator">:</span>
+            <span class="token keyword">return</span> <span class="token function">pow</span><span class="token punctuation">(</span>a <span class="token operator">+</span> <span class="token number">0.0</span><span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//pow()运算要求第一个参数为double</span>
+    <span class="token punctuation">&#125;</span>
 
-    return 0;&#x2F;&#x2F;没有含义的返回值
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment">//没有含义的返回值</span>
         
-&#125;
+<span class="token punctuation">&#125;</span>
 
-int calculate(string s) &#123;
-    stack&lt;long&gt; nums;&#x2F;&#x2F;数字栈
-    stack&lt;char&gt; ops;&#x2F;&#x2F;操作符栈
+<span class="token keyword">int</span> <span class="token function">calculate</span><span class="token punctuation">(</span>string s<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    stack<span class="token operator">&lt;</span><span class="token keyword">long</span><span class="token operator">></span> nums<span class="token punctuation">;</span><span class="token comment">//数字栈</span>
+    stack<span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token operator">></span> ops<span class="token punctuation">;</span><span class="token comment">//操作符栈</span>
 
-    s &#x3D; s + &quot;#&quot;;
-    nums.push(0);&#x2F;&#x2F;针对 -1这种情况
-    ops.push(&#39;#&#39;);
+    s <span class="token operator">=</span> s <span class="token operator">+</span> <span class="token string">"#"</span><span class="token punctuation">;</span>
+    nums<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//针对 -1这种情况</span>
+    ops<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'#'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    char ch;&#x2F;&#x2F;当前字符
-    int num;&#x2F;&#x2F;即将入栈的数字
-    int cur_index;&#x2F;&#x2F;当前符号的索引
-    int top_index;&#x2F;&#x2F;当前符号栈顶元素的索引
-    int num1, num2;&#x2F;&#x2F;前后两个运算数
+    <span class="token keyword">char</span> ch<span class="token punctuation">;</span><span class="token comment">//当前字符</span>
+    <span class="token keyword">int</span> num<span class="token punctuation">;</span><span class="token comment">//即将入栈的数字</span>
+    <span class="token keyword">int</span> cur_index<span class="token punctuation">;</span><span class="token comment">//当前符号的索引</span>
+    <span class="token keyword">int</span> top_index<span class="token punctuation">;</span><span class="token comment">//当前符号栈顶元素的索引</span>
+    <span class="token keyword">int</span> num1<span class="token punctuation">,</span> num2<span class="token punctuation">;</span><span class="token comment">//前后两个运算数</span>
 
-    &#x2F;&#x2F;2.开始遍历
-    bool flag &#x3D; true;&#x2F;&#x2F;当前字符串中，下一个数字是不是 首位。“123”,1是首位
-    for(int i &#x3D; 0; i &lt; s.length(); i++) &#123;
-        ch &#x3D; s[i];
-        if(ch &#x3D;&#x3D; &#39; &#39;) continue;&#x2F;&#x2F;跳过空格
+    <span class="token comment">//2.开始遍历</span>
+    bool flag <span class="token operator">=</span> true<span class="token punctuation">;</span><span class="token comment">//当前字符串中，下一个数字是不是 首位。“123”,1是首位</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        ch <span class="token operator">=</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>ch <span class="token operator">==</span> <span class="token string">' '</span><span class="token punctuation">)</span> <span class="token keyword">continue</span><span class="token punctuation">;</span><span class="token comment">//跳过空格</span>
 
-        if(isDigit(ch)) &#123;
-            &#x2F;&#x2F;数字
-            if(flag) &#123;
-                nums.push(ch - &#39;0&#39;);
-                flag &#x3D; false;
-            &#125;
-            else &#123;
-                num &#x3D; nums.top() * 10 + ch - &#39;0&#39;;
-                nums.pop();
-                nums.push(num);      
-            &#125;  
-        &#125;
-        else &#123;
-            &#x2F;&#x2F;符号
-            cur_index &#x3D; getIndex(ch);
-            top_index &#x3D; getIndex(ops.top());
-            if(table[top_index][cur_index] &#x3D;&#x3D; &#39;&lt;&#39;) &#123;
-                &#x2F;&#x2F;现在的操作符比栈顶元素的优先级更高
-                ops.push(ch);
-            &#125;
-            else if (table[top_index][cur_index] &#x3D;&#x3D; &#39;&gt;&#39;) &#123;
-                &#x2F;&#x2F;栈顶元素的优先级更高,弹出两个数以及操作符开始计算
-                while(table[top_index][cur_index] &#x3D;&#x3D; &#39;&gt;&#39;) &#123;
-                    &#x2F;&#x2F;栈顶元素优先级更高，开始计算.这里的操作符不会是括号，看优先级表table
-                    num2 &#x3D; nums.top();nums.pop();
-                    num1 &#x3D; nums.top();nums.pop();
-                    num &#x3D; Compute(ops.top(), num1, num2);
-                    &#x2F;&#x2F;放入刚才的计算结果
-                    nums.push(num);
-                    &#x2F;&#x2F;下一个操作符
-                    ops.pop();
-                    top_index &#x3D; getIndex(ops.top());
-                &#125;
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">isDigit</span><span class="token punctuation">(</span>ch<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token comment">//数字</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                nums<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>ch <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                flag <span class="token operator">=</span> false<span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+                num <span class="token operator">=</span> nums<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> ch <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">;</span>
+                nums<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                nums<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>      
+            <span class="token punctuation">&#125;</span>  
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+            <span class="token comment">//符号</span>
+            cur_index <span class="token operator">=</span> <span class="token function">getIndex</span><span class="token punctuation">(</span>ch<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            top_index <span class="token operator">=</span> <span class="token function">getIndex</span><span class="token punctuation">(</span>ops<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>table<span class="token punctuation">[</span>top_index<span class="token punctuation">]</span><span class="token punctuation">[</span>cur_index<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'&lt;'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token comment">//现在的操作符比栈顶元素的优先级更高</span>
+                ops<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>ch<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>table<span class="token punctuation">[</span>top_index<span class="token punctuation">]</span><span class="token punctuation">[</span>cur_index<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'>'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token comment">//栈顶元素的优先级更高,弹出两个数以及操作符开始计算</span>
+                <span class="token keyword">while</span><span class="token punctuation">(</span>table<span class="token punctuation">[</span>top_index<span class="token punctuation">]</span><span class="token punctuation">[</span>cur_index<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'>'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                    <span class="token comment">//栈顶元素优先级更高，开始计算.这里的操作符不会是括号，看优先级表table</span>
+                    num2 <span class="token operator">=</span> nums<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>nums<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    num1 <span class="token operator">=</span> nums<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>nums<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    num <span class="token operator">=</span> <span class="token function">Compute</span><span class="token punctuation">(</span>ops<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> num1<span class="token punctuation">,</span> num2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token comment">//放入刚才的计算结果</span>
+                    nums<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token comment">//下一个操作符</span>
+                    ops<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    top_index <span class="token operator">=</span> <span class="token function">getIndex</span><span class="token punctuation">(</span>ops<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span>
 
-                if(table[top_index][cur_index] &#x3D;&#x3D; &#39;&#x3D;&#39;) &#123;
-                    &#x2F;&#x2F;说明遇到了右括号与之前的左括号相等，出栈即可
-                    ops.pop();
-                &#125;
-                else &#123;
-                    &#x2F;&#x2F;此时，栈顶元素的优先级会比当前元素的优先级低，放入当前元素
-                    ops.push(ch);
-                &#125;    
-            &#125;
-            else if(table[top_index][cur_index] &#x3D;&#x3D; &#39;&#x3D;&#39;) &#123;
-                &#x2F;&#x2F;如果当前元素和栈顶元素优先级相同，例如输入的表达式为&quot;(1)&quot;
-                ops.pop();
-            &#125;
+                <span class="token keyword">if</span><span class="token punctuation">(</span>table<span class="token punctuation">[</span>top_index<span class="token punctuation">]</span><span class="token punctuation">[</span>cur_index<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'='</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                    <span class="token comment">//说明遇到了右括号与之前的左括号相等，出栈即可</span>
+                    ops<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span>
+                <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+                    <span class="token comment">//此时，栈顶元素的优先级会比当前元素的优先级低，放入当前元素</span>
+                    ops<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>ch<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span>    
+            <span class="token punctuation">&#125;</span>
+            <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>table<span class="token punctuation">[</span>top_index<span class="token punctuation">]</span><span class="token punctuation">[</span>cur_index<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'='</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token comment">//如果当前元素和栈顶元素优先级相同，例如输入的表达式为"(1)"</span>
+                ops<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
             
-            flag &#x3D; true;&#x2F;&#x2F;下一个数字是首位
-        &#125;
-    &#125;
+            flag <span class="token operator">=</span> true<span class="token punctuation">;</span><span class="token comment">//下一个数字是首位</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
 
-    return nums.top();
+    <span class="token keyword">return</span> nums<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-&#125;
+<span class="token punctuation">&#125;</span>
 
-int main() &#123;
-    string s &#x3D; &quot;2 *7-4&#x2F;3+(2^3&#x2F;2)&quot;;&#x2F;&#x2F;整数除法仅保留整数部分
-    cout &lt;&lt; calculate(s) &lt;&lt; endl;
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    string s <span class="token operator">=</span> <span class="token string">"2 *7-4/3+(2^3/2)"</span><span class="token punctuation">;</span><span class="token comment">//整数除法仅保留整数部分</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token function">calculate</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
 
-    return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -1137,7 +1139,7 @@ int main() &#123;
                 <a href="/2021/03/11/shuang-zhan-fa-jie-jue-biao-da-shi-ji-suan-wen-ti/">
                     <div class="card-image">
                         
-                        <img src="/medias/coverImgs/xxxx.jpg" class="responsive-img" alt="双栈法解决表达式计算问题">
+                        <img src="/medias/coverImgs/%E5%8F%8C%E6%A0%88%E6%B3%95%E8%A7%A3%E5%86%B3%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%A1%E7%AE%97%E9%97%AE%E9%A2%98.jpg" class="responsive-img" alt="双栈法解决表达式计算问题">
                         
                         <span class="card-title">双栈法解决表达式计算问题</span>
                     </div>
@@ -1220,16 +1222,16 @@ int main() &#123;
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/Leetcode/">
+                        <span class="chip bg-color">Leetcode</span>
+                    </a>
+                    
                     <a href="/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">
                         <span class="chip bg-color">背包问题</span>
                     </a>
                     
                     <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92dp/">
                         <span class="chip bg-color">动态规划dp</span>
-                    </a>
-                    
-                    <a href="/tags/Leetcode/">
-                        <span class="chip bg-color">Leetcode</span>
                     </a>
                     
                     <a href="/tags/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/">
@@ -1423,7 +1425,7 @@ int main() &#123;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">6.5k</span>&nbsp;字
+                class="white-color">6.2k</span>&nbsp;字
             
             
             
