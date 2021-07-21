@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Books, Zqc&#39;s Blog">
+    <meta name="keywords" content="React路由, Zqc&#39;s Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Books | Zqc&#39;s Blog</title>
+    <title>React路由 | Zqc&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/coverImgs/Books.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/coverImgs/React%E8%B7%AF%E7%94%B1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Books</h1>
+                    <h1 class="description center-align post-title">React路由</h1>
                 </div>
             </div>
         </div>
@@ -431,24 +431,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Leetcode/">
-                                <span class="chip bg-color">Leetcode</span>
+                            <a href="/tags/React/">
+                                <span class="chip bg-color">React</span>
                             </a>
                         
-                            <a href="/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">
-                                <span class="chip bg-color">背包问题</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92dp/">
-                                <span class="chip bg-color">动态规划dp</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">回溯算法</span>
-                            </a>
-                        
-                            <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
-                                <span class="chip bg-color">二叉树</span>
+                            <a href="/tags/Router/">
+                                <span class="chip bg-color">Router</span>
                             </a>
                         
                     </div>
@@ -459,8 +447,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Books/" class="post-category">
-                                Books
+                            <a href="/categories/React/" class="post-category">
+                                React
                             </a>
                         
                     </div>
@@ -472,28 +460,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-09
+                    2021-07-21
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-09
+                    2021-07-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    57
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    6 分
                 </div>
                 
 
@@ -516,41 +504,206 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="代码随想录-背包问题专题精讲-v1-0"><a href="#代码随想录-背包问题专题精讲-v1-0" class="headerlink" title="代码随想录-背包问题专题精讲(v1.0)"></a>代码随想录-背包问题专题精讲(v1.0)</h3>
+                <h1 id="React路由"><a href="#React路由" class="headerlink" title="React路由"></a>React路由</h1><hr>
+<h2 id="将路由组件和普通组件进行分开，使用NavLink"><a href="#将路由组件和普通组件进行分开，使用NavLink" class="headerlink" title="将路由组件和普通组件进行分开，使用NavLink"></a>将路由组件和普通组件进行分开，使用NavLink</h2><p><code>&lt;NavLink&gt;</code>是<code>&lt;Link&gt;</code>的一个特定版本，会在匹配上当前的url的时候给已经渲染的元素添加参数，组件的属性有</p>
+<ul>
+<li>activeClassName(string)：设置选中样式，默认值为active</li>
+<li>activeStyle(object)：当元素被选中时，为此元素添加样式</li>
+<li>exact(bool)：为true时，只有当导致和完全匹配class和style才会应用</li>
+<li>strict(bool)：为true时，在确定为位置是否与当前URL匹配时，将考虑位置pathname后的斜线</li>
+<li>isActive(func)判断链接是否激活的额外逻辑的功能</li>
+</ul>
+<hr>
+<h2 id="自己封装NavLink，减少原生NavLink中的代码量"><a href="#自己封装NavLink，减少原生NavLink中的代码量" class="headerlink" title="自己封装NavLink，减少原生NavLink中的代码量"></a>自己封装NavLink，减少原生NavLink中的代码量</h2><p>子组件可以通过<code>let &#123;children&#125; = this.props;</code>获取标签体中的内容，也就是MyNavLink标签中间的内容。因此这里的NavLink使用<code>rest操作符</code>之后，不用写标签的内容了。</p>
+<hr>
+<h2 id="Switch的使用"><a href="#Switch的使用" class="headerlink" title="Switch的使用"></a>Switch的使用</h2><ol>
+<li>通常情况下，path和component是一一对应的关系</li>
+<li>Switch可以提高路由匹配效率，单一匹配。</li>
+</ol>
+<hr>
+<h2 id="Public多级路径下样式丢失的问题"><a href="#Public多级路径下样式丢失的问题" class="headerlink" title="Public多级路径下样式丢失的问题"></a>Public多级路径下样式丢失的问题</h2><p>原因是引入CSS文件的时候使用的是相对路径，当使用多级路由的时候，会以当前URL为基准寻找CSS文件，自然是找不到。</p>
+<p>解决方法：</p>
+<ol>
+<li>（推荐）直接使用<code>绝对路径</code>固定从根目录开始寻找CSS文件。</li>
+<li>使用脚手架提供的宏<code>%PUBLIC_URL%</code>作为路径的前缀。</li>
+<li>使用HashRouter（URL不美观，不推荐）</li>
+</ol>
+<hr>
+<h2 id="路由的严格匹配和模糊匹配"><a href="#路由的严格匹配和模糊匹配" class="headerlink" title="路由的严格匹配和模糊匹配"></a>路由的严格匹配和模糊匹配</h2><ol>
+<li>模糊匹配：不用写<code>exact</code>属性即可。只要当前路由地址url和我这里匹配，就停止比较其他路由，加载组件（path的值是路由规则的前缀即可）；一旦不匹配，停止比较后续url，不加载组件，比较下一个路由。</li>
+<li>精准匹配：path和to的属性值完全一样才加载组件。标签中写个exact即可开启。</li>
+<li>不要轻易使用严格匹配，只有模糊匹配影响工作再添加exact属性开启。否则可能影响二级路由的匹配。</li>
+</ol>
+<hr>
+<h2 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h2><p><code>&lt;Redirect to=&quot;/about&quot;/&gt;</code>可以设置Switch中路径都不匹配时重定向的地址。放在Switch的最后，相当于switch的默认值。</p>
+<hr>
+<h2 id="嵌套路由"><a href="#嵌套路由" class="headerlink" title="嵌套路由"></a>嵌套路由</h2><ol>
+<li>注册子路由时要写上父路由的path值</li>
+<li>路由的匹配是按照注册路由的顺序进行的。</li>
+</ol>
+<hr>
+<h2 id="向路由组件传递params参数"><a href="#向路由组件传递params参数" class="headerlink" title="向路由组件传递params参数"></a>向路由组件传递params参数</h2><p>路由链接(携带参数)：</p>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Link</span></span>  <span class="token attr-name">to</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">/about/message/detail/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>message<span class="token punctuation">.</span>id<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>message<span class="token punctuation">.</span>title<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token punctuation">&#123;</span>message<span class="token punctuation">.</span>title<span class="token punctuation">&#125;</span><span class="token plain-text">
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Link</span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-	<div class="row">
-    <embed src="代码随想录-背包问题专题精讲(v1.0).pdf" width="100%" height="550" type="application/pdf">
-	</div>
+<p>注册路由(声明接受params参数)：</p>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Route</span></span> <span class="token attr-name">path</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>/about/message/detail/:id/:title<span class="token punctuation">'</span></span> <span class="token attr-name">component</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span>Detail<span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Route</span></span><span class="token punctuation">></span></span> <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>接受params参数：</p>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">let</span> <span class="token punctuation">&#123;</span> id<span class="token punctuation">,</span> title <span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>match<span class="token punctuation">.</span>params<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"history"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"length"</span><span class="token operator">:</span> <span class="token number">7</span><span class="token punctuation">,</span>
+    <span class="token property">"action"</span><span class="token operator">:</span> <span class="token string">"POP"</span><span class="token punctuation">,</span>
+    <span class="token property">"location"</span><span class="token operator">:</span> <span class="token string">"&#123;hash: \"\", key: \"aljghv\", pathname: \"/about/message…&#125;"</span><span class="token punctuation">,</span>
+    <span class="token property">"createHref"</span><span class="token operator">:</span> <span class="token string">"ƒ createHref() &#123;&#125;"</span><span class="token punctuation">,</span>
+    <span class="token property">"push"</span><span class="token operator">:</span> <span class="token string">"ƒ push() &#123;&#125;"</span><span class="token punctuation">,</span>
+    <span class="token property">"replace"</span><span class="token operator">:</span> <span class="token string">"ƒ replace() &#123;&#125;"</span><span class="token punctuation">,</span>
+    <span class="token property">"go"</span><span class="token operator">:</span> <span class="token string">"ƒ go() &#123;&#125;"</span><span class="token punctuation">,</span>
+    <span class="token property">"goBack"</span><span class="token operator">:</span> <span class="token string">"ƒ goBack() &#123;&#125;"</span><span class="token punctuation">,</span>
+    <span class="token property">"goForward"</span><span class="token operator">:</span> <span class="token string">"ƒ goForward() &#123;&#125;"</span><span class="token punctuation">,</span>
+    <span class="token property">"block"</span><span class="token operator">:</span> <span class="token string">"ƒ block() &#123;&#125;"</span><span class="token punctuation">,</span>
+    <span class="token property">"listen"</span><span class="token operator">:</span> <span class="token string">"ƒ listen() &#123;&#125;"</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token property">"location"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"pathname"</span><span class="token operator">:</span> <span class="token string">"/about/message/detail/001/消息1"</span><span class="token punctuation">,</span>
+    <span class="token property">"search"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+    <span class="token property">"hash"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+    <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">"aljghv"</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token property">"match"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"path"</span><span class="token operator">:</span> <span class="token string">"/about/message/detail/:id/:title"</span><span class="token punctuation">,</span>
+    <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"/about/message/detail/001/消息1"</span><span class="token punctuation">,</span>
+    <span class="token property">"isExact"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">"params"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"001"</span><span class="token punctuation">,</span>
+      <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"消息1"</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<hr>
+<h2 id="向路由组件传递search参数"><a href="#向路由组件传递search参数" class="headerlink" title="向路由组件传递search参数"></a>向路由组件传递search参数</h2><p>路由链接(携带参数)：</p>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Link</span></span> <span class="token attr-name">to</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">/about/message/detail?id=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>message<span class="token punctuation">.</span>id<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">&amp;title=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>message<span class="token punctuation">.</span>title<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token punctuation">&#123;</span>message<span class="token punctuation">.</span>title<span class="token punctuation">&#125;</span><span class="token plain-text">
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Link</span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>注册路由(无需声明，正常注册)：</p>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Route</span></span> <span class="token attr-name">path</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>/about/message/detail<span class="token punctuation">'</span></span> <span class="token attr-name">component</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span>Detail<span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Route</span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>接受search参数：</p>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">let</span> search_url <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>location<span class="token punctuation">.</span>search<span class="token punctuation">;</span>
+<span class="token keyword">let</span> search_obj <span class="token operator">=</span> qs<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>search_url<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//去除问号，转换为对象，需要借助'querystring'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"history"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"length"</span><span class="token operator">:</span> <span class="token number">9</span><span class="token punctuation">,</span>
+    <span class="token property">"action"</span><span class="token operator">:</span> <span class="token string">"PUSH"</span><span class="token punctuation">,</span>
+    <span class="token property">"location"</span><span class="token operator">:</span> <span class="token string">"&#123;hash: \"\", key: \"e1wfoy\", pathname: \"/about/message…&#125;"</span><span class="token punctuation">,</span>
+    <span class="token property">"createHref"</span><span class="token operator">:</span> <span class="token string">"ƒ createHref() &#123;&#125;"</span><span class="token punctuation">,</span>
+    <span class="token property">"push"</span><span class="token operator">:</span> <span class="token string">"ƒ push() &#123;&#125;"</span><span class="token punctuation">,</span>
+    <span class="token property">"replace"</span><span class="token operator">:</span> <span class="token string">"ƒ replace() &#123;&#125;"</span><span class="token punctuation">,</span>
+    <span class="token property">"go"</span><span class="token operator">:</span> <span class="token string">"ƒ go() &#123;&#125;"</span><span class="token punctuation">,</span>
+    <span class="token property">"goBack"</span><span class="token operator">:</span> <span class="token string">"ƒ goBack() &#123;&#125;"</span><span class="token punctuation">,</span>
+    <span class="token property">"goForward"</span><span class="token operator">:</span> <span class="token string">"ƒ goForward() &#123;&#125;"</span><span class="token punctuation">,</span>
+    <span class="token property">"block"</span><span class="token operator">:</span> <span class="token string">"ƒ block() &#123;&#125;"</span><span class="token punctuation">,</span>
+    <span class="token property">"listen"</span><span class="token operator">:</span> <span class="token string">"ƒ listen() &#123;&#125;"</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token property">"location"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"pathname"</span><span class="token operator">:</span> <span class="token string">"/about/message/detail"</span><span class="token punctuation">,</span>
+    <span class="token property">"search"</span><span class="token operator">:</span> <span class="token string">"?id=001&amp;title=消息1"</span><span class="token punctuation">,</span>
+    <span class="token property">"hash"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+    <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">"e1wfoy"</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token property">"match"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"path"</span><span class="token operator">:</span> <span class="token string">"/about/message/detail"</span><span class="token punctuation">,</span>
+    <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"/about/message/detail"</span><span class="token punctuation">,</span>
+    <span class="token property">"isExact"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">"params"</span><span class="token operator">:</span> <span class="token string">"&#123;&#125;"</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<hr>
+<h2 id="向路由组件传递state参数"><a href="#向路由组件传递state参数" class="headerlink" title="向路由组件传递state参数"></a>向路由组件传递state参数</h2><p>路由链接(携带参数)：</p>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Link</span></span> <span class="token attr-name">to</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span> 
+        <span class="token punctuation">&#123;</span>
+            pathname<span class="token operator">:</span> <span class="token string">'/about/message/detail'</span><span class="token punctuation">,</span> 
+            state<span class="token operator">:</span><span class="token punctuation">&#123;</span>id<span class="token operator">:</span> message<span class="token punctuation">.</span>id<span class="token punctuation">,</span> title<span class="token operator">:</span> message<span class="token punctuation">.</span>title<span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span> 
+   <span class="token punctuation">&#125;</span></span>
+<span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token punctuation">&#123;</span>message<span class="token punctuation">.</span>title<span class="token punctuation">&#125;</span><span class="token plain-text">
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Link</span></span><span class="token punctuation">></span></span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>注册路由(无需声明，正常注册)：</p>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Route</span></span> <span class="token attr-name">path</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>/about/message/detail<span class="token punctuation">'</span></span> <span class="token attr-name">component</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span>Detail<span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Route</span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>接受search参数：</p>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">let</span> <span class="token punctuation">&#123;</span> id<span class="token punctuation">,</span> title <span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>location<span class="token punctuation">.</span>state<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"history"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"length"</span><span class="token operator">:</span> <span class="token number">11</span><span class="token punctuation">,</span>
+    <span class="token property">"action"</span><span class="token operator">:</span> <span class="token string">"PUSH"</span><span class="token punctuation">,</span>
+    <span class="token property">"location"</span><span class="token operator">:</span> <span class="token string">"&#123;hash: \"\", key: \"81rh25\", pathname: \"/about/message…&#125;"</span><span class="token punctuation">,</span>
+    <span class="token property">"createHref"</span><span class="token operator">:</span> <span class="token string">"ƒ createHref() &#123;&#125;"</span><span class="token punctuation">,</span>
+    <span class="token property">"push"</span><span class="token operator">:</span> <span class="token string">"ƒ push() &#123;&#125;"</span><span class="token punctuation">,</span>
+    <span class="token property">"replace"</span><span class="token operator">:</span> <span class="token string">"ƒ replace() &#123;&#125;"</span><span class="token punctuation">,</span>
+    <span class="token property">"go"</span><span class="token operator">:</span> <span class="token string">"ƒ go() &#123;&#125;"</span><span class="token punctuation">,</span>
+    <span class="token property">"goBack"</span><span class="token operator">:</span> <span class="token string">"ƒ goBack() &#123;&#125;"</span><span class="token punctuation">,</span>
+    <span class="token property">"goForward"</span><span class="token operator">:</span> <span class="token string">"ƒ goForward() &#123;&#125;"</span><span class="token punctuation">,</span>
+    <span class="token property">"block"</span><span class="token operator">:</span> <span class="token string">"ƒ block() &#123;&#125;"</span><span class="token punctuation">,</span>
+    <span class="token property">"listen"</span><span class="token operator">:</span> <span class="token string">"ƒ listen() &#123;&#125;"</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token property">"location"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"pathname"</span><span class="token operator">:</span> <span class="token string">"/about/message/detail"</span><span class="token punctuation">,</span>
+    <span class="token property">"state"</span><span class="token operator">:</span> <span class="token string">"&#123;id: \"001\", title: \"消息1\"&#125;"</span><span class="token punctuation">,</span>
+    <span class="token property">"search"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+    <span class="token property">"hash"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+    <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">"81rh25"</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token property">"match"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"path"</span><span class="token operator">:</span> <span class="token string">"/about/message/detail"</span><span class="token punctuation">,</span>
+    <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"/about/message/detail"</span><span class="token punctuation">,</span>
+    <span class="token property">"isExact"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">"params"</span><span class="token operator">:</span> <span class="token string">"&#123;&#125;"</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<hr>
+<h2 id="withRouter函数"><a href="#withRouter函数" class="headerlink" title="withRouter函数"></a>withRouter函数</h2><pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> withRouter <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'react-router-dom'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ol>
+<li>withRouter可以加工一般组件，让一般组件具有路由组件所特有的API。使用前需要引入react-route</li>
+<li>withRouter是一个函数，接收一般组件，返回加工后的组件。</li>
+</ol>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> Component <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'react'</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> withRouter <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'react-router-dom'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Head</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container jumbotron bg-info<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+                </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>display-6<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">React Router Demo</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span><span class="token plain-text">
+
+                </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>history<span class="token punctuation">.</span><span class="token function">goBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-sm btn-primary mx-2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">后退</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><span class="token plain-text">
+                </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>history<span class="token punctuation">.</span><span class="token function">goForward</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-sm btn-primary mx-2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">前进</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><span class="token plain-text">
+            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">//把一般组件传入withRouter函数，可以转换为路由组件</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">withRouter</span><span class="token punctuation">(</span>Head<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
-
-<h3 id="代码随想录-二叉树专题精讲-v1-1"><a href="#代码随想录-二叉树专题精讲-v1-1" class="headerlink" title="代码随想录-二叉树专题精讲(v1.1)"></a>代码随想录-二叉树专题精讲(v1.1)</h3>
-
-	<div class="row">
-    <embed src="代码随想录-二叉树专题精讲(v1.1).pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
-
-
-<h3 id="代码随想录-回溯算法精讲-v1-1"><a href="#代码随想录-回溯算法精讲-v1-1" class="headerlink" title="代码随想录-回溯算法精讲(v1.1)"></a>代码随想录-回溯算法精讲(v1.1)</h3>
-
-	<div class="row">
-    <embed src="代码随想录-回溯算法精讲(v1.1).pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
-
-
-<h3 id="代码随想录-贪心算法专题精讲-v1-0"><a href="#代码随想录-贪心算法专题精讲-v1-0" class="headerlink" title="代码随想录-贪心算法专题精讲(v1.0)"></a>代码随想录-贪心算法专题精讲(v1.0)</h3>
-
-	<div class="row">
-    <embed src="代码随想录-贪心算法专题精讲(v1.0).pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
-
+<hr>
+<h2 id="Browser-Router-or-Hash-Router"><a href="#Browser-Router-or-Hash-Router" class="headerlink" title="Browser Router or Hash Router"></a>Browser Router or Hash Router</h2><ol>
+<li>优先考虑Browser Router，它使用HTML5的<code>history API</code>，更加美观，只是不兼容IE9以下。</li>
+<li>Hash Router最大的问题是<code>会丢失state参数</code>。</li>
+</ol>
 
                 
             </div>
@@ -577,7 +730,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://hexo.zqca.top/2021/03/09/books/">https://hexo.zqca.top/2021/03/09/books/</a>
+                    <a href="https://hexo.zqca.top/2021/07/21/react-lu-you/">https://hexo.zqca.top/2021/07/21/react-lu-you/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -615,24 +768,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Leetcode/">
-                                    <span class="chip bg-color">Leetcode</span>
+                                <a href="/tags/React/">
+                                    <span class="chip bg-color">React</span>
                                 </a>
                             
-                                <a href="/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">
-                                    <span class="chip bg-color">背包问题</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92dp/">
-                                    <span class="chip bg-color">动态规划dp</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">回溯算法</span>
-                                </a>
-                            
-                                <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
-                                    <span class="chip bg-color">二叉树</span>
+                                <a href="/tags/Router/">
+                                    <span class="chip bg-color">Router</span>
                                 </a>
                             
                         </div>
@@ -964,49 +1105,51 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/03/11/shuang-zhan-fa-jie-jue-biao-da-shi-ji-suan-wen-ti/">
+                <a href="/2021/07/21/react-lu-you/">
                     <div class="card-image">
                         
-                        <img src="/medias/coverImgs/%E5%8F%8C%E6%A0%88%E6%B3%95%E8%A7%A3%E5%86%B3%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%A1%E7%AE%97%E9%97%AE%E9%A2%98.jpg" class="responsive-img" alt="双栈法解决表达式计算问题">
+                        <img src="/medias/coverImgs/React%E8%B7%AF%E7%94%B1.jpg" class="responsive-img" alt="React路由">
                         
-                        <span class="card-title">双栈法解决表达式计算问题</span>
+                        <span class="card-title">React路由</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用两个栈解决中缀表达式计算的问题，具有通用性
+                            一些React路由组件的知识点
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-21
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Algorithm/" class="post-category">
-                                    Algorithm
+                            <a href="/categories/React/" class="post-category">
+                                    React
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Leetcode/">
-                        <span class="chip bg-color">Leetcode</span>
+                    <a href="/tags/React/">
+                        <span class="chip bg-color">React</span>
                     </a>
                     
-                    <a href="/tags/%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%A1%E7%AE%97/">
-                        <span class="chip bg-color">表达式计算</span>
+                    <a href="/tags/Router/">
+                        <span class="chip bg-color">Router</span>
                     </a>
                     
                 </div>
@@ -1020,23 +1163,23 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/03/08/ling-san-zhi-shi-dian/">
+                <a href="/2021/03/18/jquery-bi-ji/">
                     <div class="card-image">
                         
-                        <img src="/medias/coverImgs/%E9%9B%B6%E6%95%A3%E7%9F%A5%E8%AF%86%E7%82%B9.jpg" class="responsive-img" alt="零散知识点">
+                        <img src="/medias/coverImgs/jQuery%E7%AC%94%E8%AE%B0.jpg" class="responsive-img" alt="jQuery笔记">
                         
-                        <span class="card-title">零散知识点</span>
+                        <span class="card-title">jQuery笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            记录零散的知识点
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-18
                             </span>
                         <span class="publish-author">
                             
@@ -1053,20 +1196,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Leetcode/">
-                        <span class="chip bg-color">Leetcode</span>
-                    </a>
-                    
-                    <a href="/tags/React/">
-                        <span class="chip bg-color">React</span>
-                    </a>
-                    
-                    <a href="/tags/JSON/">
-                        <span class="chip bg-color">JSON</span>
-                    </a>
-                    
-                    <a href="/tags/JS/">
-                        <span class="chip bg-color">JS</span>
+                    <a href="/tags/jQuery/">
+                        <span class="chip bg-color">jQuery</span>
                     </a>
                     
                 </div>
