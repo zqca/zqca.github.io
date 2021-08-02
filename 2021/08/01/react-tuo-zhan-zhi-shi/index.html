@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Books, Zqc&#39;s Blog">
+    <meta name="keywords" content="React拓展知识, Zqc&#39;s Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Books | Zqc&#39;s Blog</title>
+    <title>React拓展知识 | Zqc&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/coverImgs/Books.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/coverImgs/React%E6%8B%93%E5%B1%95%E7%9F%A5%E8%AF%86.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Books</h1>
+                    <h1 class="description center-align post-title">React拓展知识</h1>
                 </div>
             </div>
         </div>
@@ -431,24 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Leetcode/">
-                                <span class="chip bg-color">Leetcode</span>
-                            </a>
-                        
-                            <a href="/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">
-                                <span class="chip bg-color">背包问题</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92dp/">
-                                <span class="chip bg-color">动态规划dp</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">回溯算法</span>
-                            </a>
-                        
-                            <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
-                                <span class="chip bg-color">二叉树</span>
+                            <a href="/tags/React/">
+                                <span class="chip bg-color">React</span>
                             </a>
                         
                     </div>
@@ -459,8 +443,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Books/" class="post-category">
-                                Books
+                            <a href="/categories/React/" class="post-category">
+                                React
                             </a>
                         
                     </div>
@@ -472,28 +456,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-09
+                    2021-08-01
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-09
+                    2021-08-02
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    57
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    5 分
                 </div>
                 
 
@@ -516,41 +500,148 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="代码随想录-背包问题专题精讲-v1-0"><a href="#代码随想录-背包问题专题精讲-v1-0" class="headerlink" title="代码随想录-背包问题专题精讲(v1.0)"></a>代码随想录-背包问题专题精讲(v1.0)</h3>
+                <h1 id="React拓展知识"><a href="#React拓展知识" class="headerlink" title="React拓展知识"></a>React拓展知识</h1><h3 id="01-setState"><a href="#01-setState" class="headerlink" title="01-setState"></a>01-setState</h3><h4 id="setState的两种写法"><a href="#setState的两种写法" class="headerlink" title="setState的两种写法"></a>setState的两种写法</h4><p>对象式的setState：</p>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token function">setstate</span><span class="token punctuation">(</span>statechange<span class="token punctuation">,</span> <span class="token punctuation">[</span>callback<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-	<div class="row">
-    <embed src="代码随想录-背包问题专题精讲(v1.0).pdf" width="100%" height="550" type="application/pdf">
-	</div>
+<ol>
+<li>stateChange为状态改变对象（该对象可以体现出状态的更改）</li>
+<li>callback是可选的回调函数，它在状态更新完毕、界面也更新后（<code>render调用后</code>）才被调用</li>
+</ol>
+<p>函数式的setState：</p>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token function">setstate</span><span class="token punctuation">(</span>updater<span class="token punctuation">,</span> <span class="token punctuation">[</span>callback<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
+<ol>
+<li>updater为返回stateChange对象的<code>函数</code>。</li>
+<li>updater可以接收到state和props。</li>
+<li>callback是可选的回调函数，它在状态更新、界面也更新后（render调用后）才被调用。</li>
+</ol>
+<p><strong><em>实例：</em></strong></p>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">let</span> <span class="token punctuation">&#123;</span>count<span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">;</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span> props</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>count<span class="token operator">:</span> count <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ol>
+<li>对象式的setState是函数式的setState的简写方式（语法糖）</li>
+<li>使用原则：<ul>
+<li>如果新状态不依赖于原状态===&gt;使用对象方式</li>
+<li>如果新状态依赖于原状态===&gt;使用函数方式</li>
+<li>如果需要在setState()执行后获取最新的状态数据，要在第二个callback函数中读取</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="02-lazyLoad"><a href="#02-lazyLoad" class="headerlink" title="02-lazyLoad"></a>02-lazyLoad</h3><p>通过React的lazy函数、import()函数 动态加载路由组件About、Home。</p>
+<p>通过<code>&lt;Suspense&gt;</code>指定在加载路由组件之前需要显示的组件（Loading组件）。</p>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> Component<span class="token punctuation">,</span> lazy<span class="token punctuation">,</span> Suspense <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'react'</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span>NavLink<span class="token punctuation">,</span> Redirect<span class="token punctuation">,</span> Route<span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'react-router-dom'</span><span class="token punctuation">;</span>
 
+<span class="token keyword">import</span> Loading <span class="token keyword">from</span> <span class="token string">"./Loading"</span><span class="token punctuation">;</span>
 
-<h3 id="代码随想录-二叉树专题精讲-v1-1"><a href="#代码随想录-二叉树专题精讲-v1-1" class="headerlink" title="代码随想录-二叉树专题精讲(v1.1)"></a>代码随想录-二叉树专题精讲(v1.1)</h3>
+<span class="token keyword">const</span> About <span class="token operator">=</span> <span class="token function">lazy</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'./About'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
 
-	<div class="row">
-    <embed src="代码随想录-二叉树专题精讲(v1.1).pdf" width="100%" height="550" type="application/pdf">
-	</div>
+<span class="token keyword">const</span> Home <span class="token operator">=</span> <span class="token function">lazy</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'./Home'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
 
+<span class="token operator">...</span><span class="token operator">...</span>
 
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Suspense</span></span> <span class="token attr-name">fallback</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Loading</span></span><span class="token punctuation">/></span></span><span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token punctuation">&#123;</span><span class="token comment">/* 注册路由 */</span><span class="token punctuation">&#125;</span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Route</span></span> <span class="token attr-name">path</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/about<span class="token punctuation">"</span></span> <span class="token attr-name">component</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span>About<span class="token punctuation">&#125;</span></span><span class="token punctuation">/></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Route</span></span> <span class="token attr-name">path</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/home<span class="token punctuation">"</span></span> <span class="token attr-name">component</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span>Home<span class="token punctuation">&#125;</span></span><span class="token punctuation">/></span></span><span class="token plain-text">
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Suspense</span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<hr>
+<h3 id="03-stateHook"><a href="#03-stateHook" class="headerlink" title="03-stateHook"></a>03-stateHook</h3><h4 id="React-Hook-Hooks是什么？"><a href="#React-Hook-Hooks是什么？" class="headerlink" title="React Hook/Hooks是什么？"></a>React Hook/Hooks是什么？</h4><p>Hook是React 16.8.0版本增加的新特性/新语法可以让你在函数组件中使用state以及其他的React特性</p>
+<h4 id="三个常用的Hook"><a href="#三个常用的Hook" class="headerlink" title="三个常用的Hook"></a>三个常用的Hook</h4><pre class="line-numbers language-none"><code class="language-none">State Hook:  React.useState()
+Effect Hook: React.useEffect()
+Ref Hook:    React.useRef()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="代码随想录-回溯算法精讲-v1-1"><a href="#代码随想录-回溯算法精讲-v1-1" class="headerlink" title="代码随想录-回溯算法精讲(v1.1)"></a>代码随想录-回溯算法精讲(v1.1)</h3>
+<h4 id="State-Hook"><a href="#State-Hook" class="headerlink" title="State Hook"></a>State Hook</h4><p>State Hook让函数组件也可以有state状态，并进行状态数据的读写操作</p>
+<p>语法：</p>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">const</span><span class="token punctuation">[</span>xxx<span class="token punctuation">,</span> setXxx<span class="token punctuation">]</span><span class="token operator">=</span>React<span class="token punctuation">.</span><span class="token function">useState</span><span class="token punctuation">(</span>initValue<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-	<div class="row">
-    <embed src="代码随想录-回溯算法精讲(v1.1).pdf" width="100%" height="550" type="application/pdf">
-	</div>
+<h4 id="useState-说明："><a href="#useState-说明：" class="headerlink" title="useState()说明："></a>useState()说明：</h4><p>参数：第一次初始化指定的值在内部作缓存<br>返回值：包含2个元素的数组，第1个为内部当前状态值，第2个为更新状态值的函数</p>
+<p>setXxx()2种写法：</p>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token function">setxxx</span><span class="token punctuation">(</span>newValue<span class="token punctuation">)</span><span class="token operator">:</span> 参数为非函数值<span class="token punctuation">,</span> 直接指定新的状态值<span class="token punctuation">,</span> 内部用其覆盖原来的状态值
+<span class="token function">setxxx</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token operator">=></span>newValue<span class="token punctuation">)</span>：参数为函数<span class="token punctuation">,</span> 接收原本的状态值<span class="token punctuation">,</span> 返回新的状态值<span class="token punctuation">,</span> 内部用其覆盖原来的状态值<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
+<hr>
+<h3 id="04-effectHook"><a href="#04-effectHook" class="headerlink" title="04-effectHook"></a>04-effectHook</h3><p>Effect Hook 可以让你在函数组件中执行副作用操作(用于模拟类组件中的生命周期钩子)</p>
+<p>React中的副作用操作: </p>
+<ul>
+<li>发ajax请求数据获取</li>
+<li>设置订阅/启动定时器</li>
+<li>手动更改真实DOM</li>
+</ul>
+<p>语法和说明:</p>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
+    <span class="token comment">//在此可以执行任何带副作用操作</span>
+    <span class="token keyword">return</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span><span class="token comment">//在组件卸载前执行</span>
+        <span class="token comment">//在此做一些收尾工作，比如清除定时器/取消订阅等</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>statevalue<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token comment">//如果指定的是[]，回调函数只会在第一次render()后执行</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<p>可以把useEffect Hook看做如下三个函数的组合</p>
+<ul>
+<li>componentDidMount()</li>
+<li>componentDidUpdate()</li>
+<li>componentWillUnmount()</li>
+</ul>
+<hr>
+<h3 id="05-refHook"><a href="#05-refHook" class="headerlink" title="05-refHook"></a>05-refHook</h3><p>Ref Hook可以在函数组件中存储/查找组件内的标签或任意其它数据</p>
+<p>语法:</p>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">const</span> refcontainer<span class="token operator">=</span>React<span class="token punctuation">.</span><span class="token function">useRef</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
+<p>作用: 保存标签对象，功能与<code>React.createRef()</code>一样</p>
+<hr>
+<h3 id="06-fragment"><a href="#06-fragment" class="headerlink" title="06-fragment"></a>06-fragment</h3><p>使用</p>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Fragment</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Fragment</span></span><span class="token punctuation">></span></span><span class="token plain-text">   或   </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="代码随想录-贪心算法专题精讲-v1-0"><a href="#代码随想录-贪心算法专题精讲-v1-0" class="headerlink" title="代码随想录-贪心算法专题精讲(v1.0)"></a>代码随想录-贪心算法专题精讲(v1.0)</h3>
+<p>作用：可以不用必须有一个真实的DOM根标签了</p>
+<hr>
+<h3 id="07-context"><a href="#07-context" class="headerlink" title="07-context"></a>07-context</h3><h4 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h4><p>一种组件间通信方式，常用于【祖组件】与【后代组件】间通信</p>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>创建Context容器对象:</p>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">const</span> Xxxcontext <span class="token operator">=</span> React<span class="token punctuation">.</span><span class="token function">createContext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-	<div class="row">
-    <embed src="代码随想录-贪心算法专题精讲(v1.0).pdf" width="100%" height="550" type="application/pdf">
-	</div>
+<p>渲染子组时，外面包裹<code>xxxContext.Provider</code>，通过<code>value属性</code>给后代组件传递数据:</p>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>xxxContext.Provider</span> <span class="token attr-name">value</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span>数据<span class="token punctuation">&#125;</span></span><span class="token punctuation">></span></span><span class="token plain-text">子组件</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>xxxContext.Provider</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
+<p>后代组件读取数据：</p>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token comment">//第一种方式：仅适用于类组件static contextType = xxxContext; //声明接收contextthis.context //读取context中的value数据        //第二种方式：函数组件与类组件都可以&lt;xxxContext.Consumer>    &#123;        value=>(//value就是context中的value数据            要显示的内容        )    &#125;&lt;/xxxContext.Consumer></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><p>在应用开发中一般不用context，一般都用它的封装React插件</p>
+<hr>
+<h3 id="08-PureComponent"><a href="#08-PureComponent" class="headerlink" title="08-PureComponent"></a>08-PureComponent</h3><h4 id="Component的2个问题"><a href="#Component的2个问题" class="headerlink" title="Component的2个问题"></a>Component的2个问题</h4><ol>
+<li>只要执行setState()，即使不改变状态数据，组件也会重新render()==&gt;效率低 </li>
+<li>只要当前组件重新render()，就会自动重新render子组件，即使子组件没有用到父组件的任何数据==&gt;效率低</li>
+</ol>
+<h4 id="效率高的做法"><a href="#效率高的做法" class="headerlink" title="效率高的做法"></a>效率高的做法</h4><p>只有当组件的state或props数据发生改变时才重新render()</p>
+<h4 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h4><p><code>Component</code>中的<code>shouldcomponentUpdate()</code>总是返回true</p>
+<h4 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h4><h5 id="办法1："><a href="#办法1：" class="headerlink" title="办法1："></a>办法1：</h5><p>重写<code>shouldComponentUpdate()</code>方法, 比较新旧state或props数据，如果有变化才返回true，如果没有返回false</p>
+<h5 id="办法2："><a href="#办法2：" class="headerlink" title="办法2："></a>办法2：</h5><p>使用<code>PureComponent</code>。 <code>PureComponent</code>重写了<code>shouldComponentUpdate()</code>。<br>只有state或props数据有变化才返回true</p>
+<p>注意：</p>
+<ul>
+<li>只是进行state和props数据的浅比较，如果只是数据对象内部数据变了，返回false</li>
+<li>不要直接修改state数据，而是要产生新数据</li>
+<li>项目中一般使用PureComponent来优化</li>
+</ul>
+<hr>
+<h3 id="09-renderProps"><a href="#09-renderProps" class="headerlink" title="09-renderProps"></a>09-renderProps</h3><p>如何向组件内部动态传入带内容的结构（标签）？</p>
+<p>React中：通过组件标签的属性（一般设置为<code>render</code>）来传入结构，并且可以携带参数.</p>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token operator">&lt;</span><span class="token constant">A</span> render <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token parameter">data</span> <span class="token operator">=></span> <span class="token operator">&lt;</span><span class="token constant">B</span> name<span class="token operator">=</span> <span class="token punctuation">&#123;</span>data<span class="token punctuation">&#125;</span><span class="token operator">/</span><span class="token operator">></span> <span class="token punctuation">&#125;</span> <span class="token operator">/</span><span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
+<p>A组件含有“如何”渲染B组件的方法。</p>
+<hr>
+<h3 id="10-ErrorBoundary"><a href="#10-ErrorBoundary" class="headerlink" title="10-ErrorBoundary"></a>10-ErrorBoundary</h3><p>控制错误的边界，避免错误一层层传递，用户体验不佳。</p>
+<p>特点：只能捕获后代组件生命周期产生的错误，不能捕获自己组件产生的错误和其他组件在合成事件、定时器中产生的错误。</p>
+<p><strong><code>后代组件</code>出现错误时触发，返回一个新的state：</strong></p>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">class</span> <span class="token class-name">Parent</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">&#123;</span>   state <span class="token operator">=</span> <span class="token punctuation">&#123;</span>hasError<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">&#125;</span>   <span class="token comment">//一开始无错误   static getDerivedStateFromError(error)&#123;      //console.log('捕获的错误是', error);      return &#123;hasError: error&#125;   &#125;   //出现错误时执行，一般用于统计并记录错误的信息   componentDidCatch(error, errorInfo) &#123;      console.log(error);   &#125;   render() &#123;      return (              &lt;div>                 &lt;h3>我是Parent&lt;/h3>                 &#123; this.state.hasError ? &lt;h5>有错误&lt;/h5> : &lt;Children/> &#125;              &lt;/div>      );   &#125;&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(Note:) 在开发模式中, 会一闪而过，build后生效。</p>
 
                 
             </div>
@@ -577,7 +668,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://hexo.zqca.top/2021/03/09/books/">https://hexo.zqca.top/2021/03/09/books/</a>
+                    <a href="https://hexo.zqca.top/2021/08/01/react-tuo-zhan-zhi-shi/">https://hexo.zqca.top/2021/08/01/react-tuo-zhan-zhi-shi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -615,24 +706,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Leetcode/">
-                                    <span class="chip bg-color">Leetcode</span>
-                                </a>
-                            
-                                <a href="/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">
-                                    <span class="chip bg-color">背包问题</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92dp/">
-                                    <span class="chip bg-color">动态规划dp</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">回溯算法</span>
-                                </a>
-                            
-                                <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
-                                    <span class="chip bg-color">二叉树</span>
+                                <a href="/tags/React/">
+                                    <span class="chip bg-color">React</span>
                                 </a>
                             
                         </div>
@@ -964,49 +1039,47 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/03/11/shuang-zhan-fa-jie-jue-biao-da-shi-ji-suan-wen-ti/">
+                <a href="/2021/08/01/react-tuo-zhan-zhi-shi/">
                     <div class="card-image">
                         
-                        <img src="/medias/coverImgs/%E5%8F%8C%E6%A0%88%E6%B3%95%E8%A7%A3%E5%86%B3%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%A1%E7%AE%97%E9%97%AE%E9%A2%98.jpg" class="responsive-img" alt="双栈法解决表达式计算问题">
+                        <img src="/medias/coverImgs/React%E6%8B%93%E5%B1%95%E7%9F%A5%E8%AF%86.jpg" class="responsive-img" alt="React拓展知识">
                         
-                        <span class="card-title">双栈法解决表达式计算问题</span>
+                        <span class="card-title">React拓展知识</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用两个栈解决中缀表达式计算的问题，具有通用性
+                            React相关的零碎知识
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Algorithm/" class="post-category">
-                                    Algorithm
+                            <a href="/categories/React/" class="post-category">
+                                    React
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Leetcode/">
-                        <span class="chip bg-color">Leetcode</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%A1%E7%AE%97/">
-                        <span class="chip bg-color">表达式计算</span>
+                    <a href="/tags/React/">
+                        <span class="chip bg-color">React</span>
                     </a>
                     
                 </div>
@@ -1020,30 +1093,30 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/03/08/ling-san-zhi-shi-dian/">
+                <a href="/2021/07/27/react-redux/">
                     <div class="card-image">
                         
-                        <img src="/medias/coverImgs/%E9%9B%B6%E6%95%A3%E7%9F%A5%E8%AF%86%E7%82%B9.jpg" class="responsive-img" alt="零散知识点">
+                        <img src="/medias/coverImgs/React-Redux.jpg" class="responsive-img" alt="React-Redux">
                         
-                        <span class="card-title">零散知识点</span>
+                        <span class="card-title">React-Redux</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            记录零散的知识点
+                            Redux相关
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-27
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Record/" class="post-category">
-                                    Record
+                            <a href="/categories/React/" class="post-category">
+                                    React
                                 </a>
                             
                             
@@ -1053,20 +1126,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Leetcode/">
-                        <span class="chip bg-color">Leetcode</span>
-                    </a>
-                    
                     <a href="/tags/React/">
                         <span class="chip bg-color">React</span>
-                    </a>
-                    
-                    <a href="/tags/JS/">
-                        <span class="chip bg-color">JS</span>
-                    </a>
-                    
-                    <a href="/tags/JSON/">
-                        <span class="chip bg-color">JSON</span>
                     </a>
                     
                 </div>

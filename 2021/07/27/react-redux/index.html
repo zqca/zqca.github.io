@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Books, Zqc&#39;s Blog">
+    <meta name="keywords" content="React-Redux, Zqc&#39;s Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Books | Zqc&#39;s Blog</title>
+    <title>React-Redux | Zqc&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/coverImgs/Books.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/coverImgs/React-Redux.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Books</h1>
+                    <h1 class="description center-align post-title">React-Redux</h1>
                 </div>
             </div>
         </div>
@@ -431,24 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Leetcode/">
-                                <span class="chip bg-color">Leetcode</span>
-                            </a>
-                        
-                            <a href="/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">
-                                <span class="chip bg-color">背包问题</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92dp/">
-                                <span class="chip bg-color">动态规划dp</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">回溯算法</span>
-                            </a>
-                        
-                            <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
-                                <span class="chip bg-color">二叉树</span>
+                            <a href="/tags/React/">
+                                <span class="chip bg-color">React</span>
                             </a>
                         
                     </div>
@@ -459,8 +443,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Books/" class="post-category">
-                                Books
+                            <a href="/categories/React/" class="post-category">
+                                React
                             </a>
                         
                     </div>
@@ -472,28 +456,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-09
+                    2021-07-27
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-09
+                    2021-08-02
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    57
+                    612
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -516,40 +500,57 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="代码随想录-背包问题专题精讲-v1-0"><a href="#代码随想录-背包问题专题精讲-v1-0" class="headerlink" title="代码随想录-背包问题专题精讲(v1.0)"></a>代码随想录-背包问题专题精讲(v1.0)</h3>
+                <h1 id="React-Redux"><a href="#React-Redux" class="headerlink" title="React-Redux"></a>React-Redux</h1><p>在<code>redux</code>目录下，新建<code>count.js</code>文件，为Count组件生成action对象;</p>
+<p>在<code>redux</code>目录下，新建<code>constant.js</code>文件，用来存放action对象中<code>使用的type的值</code>，方便维护，防止写错;</p>
+<h2 id="求和案例-redux异步action版"><a href="#求和案例-redux异步action版" class="headerlink" title="求和案例_redux异步action版"></a>求和案例_redux异步action版</h2><p>明确前提：延迟的动作不想交给组件自身，想交给action</p>
+<p>何时需要<code>异步action</code>：想要对状态进行操作，但是具体的数据靠异步任务返回。</p>
+<p>具体编码：</p>
+<ol>
+<li><code>yarn add redux-thunk</code> 并配置在store中 </li>
+<li>创建action的函数不再返回一般对象，而是一个函数，该函数中写异步任务。</li>
+<li>异步任务有结果后，分发一个同步的action去真正操作数据。</li>
+</ol>
+<blockquote>
+<p>备注：异步action不是必须要写的，完全可以自己等待异步任务的结果了再去分发同步action。</p>
+</blockquote>
+<h2 id="react-redux基本使用"><a href="#react-redux基本使用" class="headerlink" title="react-redux基本使用"></a>react-redux基本使用</h2><p>明确两个概念：</p>
+<ol>
+<li>UI组件：不能使用任何redux的api，只负责页面的呈现、交互等。</li>
+<li>容器组件：负责和redux通信，将结果交给UI组件。</li>
+</ol>
+<p>如何创建一个容器组件？</p>
+<p>靠react-redux的<code>connect</code>函数</p>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token function">connect</span><span class="token punctuation">(</span>mapStateToProps<span class="token punctuation">,</span> mapDispatchToProps<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token constant">UI</span>组件<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-	<div class="row">
-    <embed src="代码随想录-背包问题专题精讲(v1.0).pdf" width="100%" height="550" type="application/pdf">
-	</div>
+<ul>
+<li><code>mapStateToProps</code>：映射状态，返回值是一个对象</li>
+<li><code>mapDispatchToProps</code>：映射操作状态的方法，返回值是一个对象</li>
+</ul>
+<blockquote>
+<p>备注1：容器组件中的store是靠props传进去的，而不是在容器组件中直接引入;</p>
+</blockquote>
+<blockquote>
+<p>备注2：<code>mapDispatchToProps</code>可以直接传对象，对象里面直接写<code>action</code>，react-redux会自动使用dispatch派发action.</p>
+</blockquote>
+<h2 id="求和案例-react-redux优化"><a href="#求和案例-react-redux优化" class="headerlink" title="求和案例_react-redux优化"></a>求和案例_react-redux优化</h2><ol>
+<li>容器组件和UI组件整合一个文件</li>
+<li>无需自己给容器组件传递store，给<App>包裹一个<code>&lt;Provider store=&#123;store&#125;&gt;</code>即可。</App></li>
+<li>使用了react-redux后也<strong>不用自己监测redux中状态的改变</strong>了，容器组件可以自动完成这个工作。</li>
+<li><code>mapDispatchToProps</code>也可以简单的写成一个对象</li>
+</ol>
+<p>##求和案例_react-redux数据共享版</p>
+<ol>
+<li>定义一个Person组件，和Count组件通过redux共享数据。</li>
+<li>为Person组件编写：reducer、action，配置constant常量。</li>
+<li>Person的reducer和Count的Reducer要使用<code>combineReducers</code>进行合并，合并后的总状态是一个<code>对象</code>！！！</li>
+<li>传给store的是总reducer，最后注意在容器组件中取出状态的时候，记得<code>按总状态中指定的Key获取</code>。</li>
+</ol>
+<h2 id="求和案例-react-redux开发者工具的使用"><a href="#求和案例-react-redux开发者工具的使用" class="headerlink" title="求和案例_react-redux开发者工具的使用"></a>求和案例_react-redux开发者工具的使用</h2><p>安装：</p>
+<pre class="line-numbers language-none"><code class="language-none">yarn add redux-devtools-extension<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-
-
-
-<h3 id="代码随想录-二叉树专题精讲-v1-1"><a href="#代码随想录-二叉树专题精讲-v1-1" class="headerlink" title="代码随想录-二叉树专题精讲(v1.1)"></a>代码随想录-二叉树专题精讲(v1.1)</h3>
-
-	<div class="row">
-    <embed src="代码随想录-二叉树专题精讲(v1.1).pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
-
-
-<h3 id="代码随想录-回溯算法精讲-v1-1"><a href="#代码随想录-回溯算法精讲-v1-1" class="headerlink" title="代码随想录-回溯算法精讲(v1.1)"></a>代码随想录-回溯算法精讲(v1.1)</h3>
-
-	<div class="row">
-    <embed src="代码随想录-回溯算法精讲(v1.1).pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
-
-
-<h3 id="代码随想录-贪心算法专题精讲-v1-0"><a href="#代码随想录-贪心算法专题精讲-v1-0" class="headerlink" title="代码随想录-贪心算法专题精讲(v1.0)"></a>代码随想录-贪心算法专题精讲(v1.0)</h3>
-
-	<div class="row">
-    <embed src="代码随想录-贪心算法专题精讲(v1.0).pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
+<p>在store中进行配置：</p>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> composewithDevTools <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'redux-devtools-extension'</span>
+<span class="token keyword">const</span> store <span class="token operator">=</span> <span class="token function">createStore</span><span class="token punctuation">(</span>allReducer<span class="token punctuation">,</span> <span class="token function">composewithDevTools</span><span class="token punctuation">(</span><span class="token function">applyMiddleware</span><span class="token punctuation">(</span>thunk<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 
                 
@@ -577,7 +578,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://hexo.zqca.top/2021/03/09/books/">https://hexo.zqca.top/2021/03/09/books/</a>
+                    <a href="https://hexo.zqca.top/2021/07/27/react-redux/">https://hexo.zqca.top/2021/07/27/react-redux/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -615,24 +616,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Leetcode/">
-                                    <span class="chip bg-color">Leetcode</span>
-                                </a>
-                            
-                                <a href="/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">
-                                    <span class="chip bg-color">背包问题</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92dp/">
-                                    <span class="chip bg-color">动态规划dp</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">回溯算法</span>
-                                </a>
-                            
-                                <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
-                                    <span class="chip bg-color">二叉树</span>
+                                <a href="/tags/React/">
+                                    <span class="chip bg-color">React</span>
                                 </a>
                             
                         </div>
@@ -968,30 +953,30 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/03/11/shuang-zhan-fa-jie-jue-biao-da-shi-ji-suan-wen-ti/">
+                <a href="/2021/08/01/react-tuo-zhan-zhi-shi/">
                     <div class="card-image">
                         
-                        <img src="/medias/coverImgs/%E5%8F%8C%E6%A0%88%E6%B3%95%E8%A7%A3%E5%86%B3%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%A1%E7%AE%97%E9%97%AE%E9%A2%98.jpg" class="responsive-img" alt="双栈法解决表达式计算问题">
+                        <img src="/medias/coverImgs/React%E6%8B%93%E5%B1%95%E7%9F%A5%E8%AF%86.jpg" class="responsive-img" alt="React拓展知识">
                         
-                        <span class="card-title">双栈法解决表达式计算问题</span>
+                        <span class="card-title">React拓展知识</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用两个栈解决中缀表达式计算的问题，具有通用性
+                            React相关的零碎知识
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-11
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-01
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Algorithm/" class="post-category">
-                                    Algorithm
+                            <a href="/categories/React/" class="post-category">
+                                    React
                                 </a>
                             
                             
@@ -1001,12 +986,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Leetcode/">
-                        <span class="chip bg-color">Leetcode</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%A1%E7%AE%97/">
-                        <span class="chip bg-color">表达式计算</span>
+                    <a href="/tags/React/">
+                        <span class="chip bg-color">React</span>
                     </a>
                     
                 </div>
@@ -1020,30 +1001,30 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/03/08/ling-san-zhi-shi-dian/">
+                <a href="/2021/07/23/js-zhong-dui-de-shi-xian/">
                     <div class="card-image">
                         
-                        <img src="/medias/coverImgs/%E9%9B%B6%E6%95%A3%E7%9F%A5%E8%AF%86%E7%82%B9.jpg" class="responsive-img" alt="零散知识点">
+                        <img src="/medias/coverImgs/js%E4%B8%AD%E5%A0%86%E7%9A%84%E5%AE%9E%E7%8E%B0.jpg" class="responsive-img" alt="js中堆的实现">
                         
-                        <span class="card-title">零散知识点</span>
+                        <span class="card-title">js中堆的实现</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            记录零散的知识点
+                            自己动手实现js版本的数据结构--堆
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-23
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Record/" class="post-category">
-                                    Record
+                            <a href="/categories/JS/" class="post-category">
+                                    JS
                                 </a>
                             
                             
@@ -1057,16 +1038,8 @@
                         <span class="chip bg-color">Leetcode</span>
                     </a>
                     
-                    <a href="/tags/React/">
-                        <span class="chip bg-color">React</span>
-                    </a>
-                    
                     <a href="/tags/JS/">
                         <span class="chip bg-color">JS</span>
-                    </a>
-                    
-                    <a href="/tags/JSON/">
-                        <span class="chip bg-color">JSON</span>
                     </a>
                     
                 </div>
